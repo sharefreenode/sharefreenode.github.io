@@ -1,4 +1,4 @@
-# 8月29日18.2M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接  更新时间 2024-08-29 08:50:30
+# 8月30日21.8M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接  更新时间 2024-08-30 11:03:11
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://sharefreenode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,19 +9,19 @@
 
 ### Clash订阅链接
 
-- https://sharefreenode.github.io/uploads/2024/08/0-20240829.yaml
-- https://sharefreenode.github.io/uploads/2024/08/1-20240829.yaml
-- https://sharefreenode.github.io/uploads/2024/08/2-20240829.yaml
-- https://sharefreenode.github.io/uploads/2024/08/3-20240829.yaml
-- https://sharefreenode.github.io/uploads/2024/08/4-20240829.yml
+- https://sharefreenode.github.io/uploads/2024/08/0-20240830.yaml
+- https://sharefreenode.github.io/uploads/2024/08/1-20240830.yaml
+- https://sharefreenode.github.io/uploads/2024/08/2-20240830.yaml
+- https://sharefreenode.github.io/uploads/2024/08/3-20240830.yaml
+- https://sharefreenode.github.io/uploads/2024/08/4-20240830.yml
 
 ### V2ray订阅链接
 
-- https://sharefreenode.github.io/uploads/2024/08/0-20240829.txt
-- https://sharefreenode.github.io/uploads/2024/08/1-20240829.txt
-- https://sharefreenode.github.io/uploads/2024/08/2-20240829.txt
-- https://sharefreenode.github.io/uploads/2024/08/3-20240829.txt
-- https://sharefreenode.github.io/uploads/2024/08/4-20240829.txt
+- https://sharefreenode.github.io/uploads/2024/08/0-20240830.txt
+- https://sharefreenode.github.io/uploads/2024/08/1-20240830.txt
+- https://sharefreenode.github.io/uploads/2024/08/2-20240830.txt
+- https://sharefreenode.github.io/uploads/2024/08/3-20240830.txt
+- https://sharefreenode.github.io/uploads/2024/08/4-20240830.txt
 
 ## 更多clash节点订阅 ：
 
