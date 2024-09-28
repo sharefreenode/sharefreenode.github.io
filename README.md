@@ -1,4 +1,4 @@
-# 9月28日20.3M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接  更新时间 2024-09-28 10:53:32
+# 9月28日18.6M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接  更新时间 2024-09-28 16:58:58
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://sharefreenode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
