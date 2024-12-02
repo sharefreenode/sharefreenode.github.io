@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-20558.htm" />
+    <title>spring boot Actuator之自定义Endpoint</title>
+        <meta name="description" content="本文基于spring boot 2.2.0 release版本。  在上一篇文章《spring boot Actuator原理详解之启动》详细介绍了在web环境下，Actuator是如何启动的，这里对" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="__ADDON__/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+    <link href="__ADDON__/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+                        <a href="/" class="scrollto">Share<span>FreeNode</span></a>
+                        <!-- <a href="#body"><img src="/assets/addons/xcblog/img/sharefreenode/logo.png" alt="" title="" /></a>-->
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>
+                    <a href="#">关于</a>
+                </li>
+                <li>
+                    <a href="#">联系</a>
+                </li>
+            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>spring boot Actuator之自定义Endpoint</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <blockquote> <p>本文基于spring boot 2.2.0 release版本。</p> </blockquote> <p>在上一篇文章《<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_38308374/article/details/114273724"  rel="nofollow">spring boot Actuator原理详解之启动</a>》详细介绍了在web环境下，Actuator是如何启动的，这里对流程做一个简单的总结：</p> <ol> <li>扫描所有@Endpoint注解的类，这些类都是Endpoint；</li> <li>使用过滤器对Endpoint对象进行过滤，没有被过滤掉的才可以进入下一步；</li> <li>读取Endpoint对象的每个方法，判断是否有@ReadOperation、@WriteOperation、@DeleteOperation三个注解，如果有，则针对每个被注解的方法创建操作对象Operation；</li> <li>根据操作对象、Endpoint对象、Endpoint名创建为RequestMappingInfo，并将其注册到spring mvc中；</li> <li>注册成功之后，Endpoint对象便可以对外提供服务。</li> </ol> <p>明白了上面整个启动流程之后，我们也可以编写一个自定义的Endpoint。<br /> 自定义Endpoint的关键点：</p> <ol> <li>类上必须有注解@Endpoint，注解必须设置id值，否则启动抛出如下异常：<code>Caused by: java.lang.IllegalStateException: No @Endpoint id attribute specified for XXXClass</code>；</li> <li>必须指定方法注解为下面三个中一个：<code>@ReadOperation、@WriteOperation、@DeleteOperation</code>；</li> <li>注解@Selector可以指定路径参数，比如<code>/actuator/caches/{cache}</code>花括号里面的内容是路径参数，我们可以在方法入参上添加@Selector来指定路径参数，比如<code>public String counters(@Selector int value)</code>；</li> <li>默认Endpoint对象的方法都是以json格式返回客户端，可以通过设置<code>@ReadOperation、@WriteOperation、@DeleteOperation</code>的produces属性指定其他格式。</li> </ol> <p>下面给出一个自定义Endpoint的例子：</p> <pre><code class="prism language-java"><span class="token comment">/**  * 统计方法该Endpoint对象的次数  */</span> <span class="token annotation punctuation">@Component</span> <span class="token annotation punctuation">@Endpoint</span><span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">"counter"</span><span class="token punctuation">)</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Counter</span>  <span class="token punctuation">{<!-- --></span>     <span class="token keyword">private</span> AtomicInteger cnt<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">AtomicInteger</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token annotation punctuation">@ReadOperation</span>     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">counter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token keyword">return</span> cnt<span class="token punctuation">.</span><span class="token function">getAndAdd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>     <span class="token annotation punctuation">@ReadOperation</span>     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">counters</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Selector</span> <span class="token keyword">int</span> value<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token keyword">return</span> cnt<span class="token punctuation">.</span><span class="token function">getAndAdd</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <p>上面这个类只是一个示例，并没有实际意义。运行起来后，访问<code>http://localhost:8079/actuator/counter</code>，每次访问都会返回一个比之前大1的数字。</p> <p>我们还可以使用注解@EndpointWebExtension扩展已有的Endpoint。<br /> 下面是spring提供的对EnvironmentEndpoint的扩展：</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@EndpointWebExtension</span><span class="token punctuation">(</span>endpoint <span class="token operator">=</span> EnvironmentEndpoint<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">EnvironmentEndpointWebExtension</span> <span class="token punctuation">{<!-- --></span> 	<span class="token keyword">private</span> <span class="token keyword">final</span> EnvironmentEndpoint delegate<span class="token punctuation">;</span> 	<span class="token keyword">public</span> <span class="token function">EnvironmentEndpointWebExtension</span><span class="token punctuation">(</span>EnvironmentEndpoint delegate<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 		<span class="token keyword">this</span><span class="token punctuation">.</span>delegate <span class="token operator">=</span> delegate<span class="token punctuation">;</span> 	<span class="token punctuation">}</span>  	<span class="token annotation punctuation">@ReadOperation</span> 	<span class="token keyword">public</span> WebEndpointResponse<span class="token generics function"><span class="token punctuation">&lt;</span>EnvironmentEntryDescriptor<span class="token punctuation">&gt;</span></span> <span class="token function">environmentEntry</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Selector</span> String toMatch<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 		EnvironmentEntryDescriptor descriptor <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>delegate<span class="token punctuation">.</span><span class="token function">environmentEntry</span><span class="token punctuation">(</span>toMatch<span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">WebEndpointResponse</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>descriptor<span class="token punctuation">,</span> <span class="token function">getStatus</span><span class="token punctuation">(</span>descriptor<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token punctuation">}</span>  	<span class="token keyword">private</span> <span class="token keyword">int</span> <span class="token function">getStatus</span><span class="token punctuation">(</span>EnvironmentEntryDescriptor descriptor<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 		<span class="token keyword">if</span> <span class="token punctuation">(</span>descriptor<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 			<span class="token keyword">return</span> WebEndpointResponse<span class="token punctuation">.</span>STATUS_NOT_FOUND<span class="token punctuation">;</span> 		<span class="token punctuation">}</span> 		<span class="token keyword">return</span> WebEndpointResponse<span class="token punctuation">.</span>STATUS_OK<span class="token punctuation">;</span> 	<span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <p>就web环境下来说，如果扩展类的方法有与原类相同的http请求路径，那么扩展类会替换掉原来的方法，也就是说，访问该路径时，不会访问到原类的方法，而是访问到扩展类。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-20102.htm">动物医院实践心得2500字内容（动物医院实训总结）</a></p>
+                                        <p>下一个：<a href="/news/article-20560.htm">【LINT】cpplint修改版：自定义编码风格检查工具lint_在线工具</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-5-12-free-subscribe-node.htm" title="5月12日21.4M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接">5月12日21.4M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-18-free-shadowrocket-node.htm" title="10月18日19.1M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接，代理机场推荐">10月18日19.1M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-16-free-v2ray.htm" title="10月16日19.3M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，代理机场推荐">10月16日19.3M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-26-free-ssr-node.htm" title="9月26日19.1M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接">9月26日19.1M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-30-clash-node.htm" title="9月30日18.5M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新订阅链接">9月30日18.5M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-29-free-clash.htm" title="8月29日19.1M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接">8月29日19.1M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-20-free-v2ray.htm" title="8月20日20.6M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接">8月20日20.6M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20558.htm" title="spring boot Actuator之自定义Endpoint">spring boot Actuator之自定义Endpoint</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-1-free-ssr-subscribe.htm" title="10月1日22.5M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接">10月1日22.5M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-3-free-v2ray-subscribe.htm" title="8月3日19.3M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接">8月3日19.3M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
