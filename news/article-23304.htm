@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-23304.htm" />
+    <title>C# 实现登录并跳转界面</title>
+        <meta name="description" content="前言：本篇文章没有使用连接数据库验证登录名和密码，只是最基本的字符串对比，下篇文章会在本文基础上增加数据库连接和验证。 正文： 1. 登录窗口界面的布局设计 &nbsp; &nbsp; （1）新建一个" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="__ADDON__/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+    <link href="__ADDON__/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+                        <a href="/" class="scrollto">Share<span>FreeNode</span></a>
+                        <!-- <a href="#body"><img src="/assets/addons/xcblog/img/sharefreenode/logo.png" alt="" title="" /></a>-->
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>
+                    <a href="#">关于</a>
+                </li>
+                <li>
+                    <a href="#">联系</a>
+                </li>
+            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>C# 实现登录并跳转界面</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                  				  				  				<div id="content_views" class="htmledit_views"> <p><strong>前言：</strong>本篇文章没有使用连接数据库验证登录名和密码，只是最基本的字符串对比，下篇文章会在本文基础上增加数据库连接和验证。</p> <p><strong>正文：</strong></p> <p>1. 登录窗口界面的布局设计</p> <p style="text-indent:0px;">&nbsp; &nbsp; （1）新建一个form窗体，并且修改属性值。如图</p> <p>&nbsp; &nbsp;&nbsp; 属性Text：Form1 改为 登录界面 ；</p> <p>&nbsp; &nbsp; &nbsp;属性Name：Form1 改为 Login ；</p> <p><img fetchpriority="high" decoding="async" alt="" class="has" height="450" src="http://img.555519.xyz/uploads3/20220904/ccb8ceb90d3bed3d63e10f3c222e6763.jpg"></p> <p><img decoding="async" alt="" class="has" height="500" src="http://img.555519.xyz/uploads3/20220904/2bcd50e61d8657d416868104c60459b0.jpg"></p> <p><img decoding="async" alt="" class="has" height="500" src="http://img.555519.xyz/uploads3/20220904/613b6d7dae9b8aacd042f35e39216b6c.jpg"></p> <p><img loading="lazy" decoding="async" alt="" class="has" height="500" src="http://img.555519.xyz/uploads3/20220904/62b0ab4d5be7f4ebdd4f7aba65cbd879.jpg"></p> <p>&nbsp;（2）在工具箱搜索寻找需要的控件，登录界面一般需要Label，Button，TextBox。<br /> &nbsp;&nbsp;同样，在属性窗格修改属性值，方便代码书写的命名。这里命名为：</p> <p><img loading="lazy" decoding="async" alt="" class="has" height="300" src="http://img.555519.xyz/uploads3/20220904/70e2617869b627578327d793e9a1d932.jpg"></p> <p>&nbsp;（3）调整各个控件的大小，字体，布局：</p> <p><img loading="lazy" decoding="async" alt="" class="has" height="500" src="http://img.555519.xyz/uploads3/20220904/631843eb5777b002cda58d9e4fd52ade.jpg"></p> <p>（4）双击登录按钮，进行代码编辑</p> <pre class="has"><code class="language-csharp">private void btnLogin_Click(object sender, EventArgs e)         {             //1. 获取数据             //从TextBox中获取用户输入信息             string userName = this.txtUserName.Text;                  string userPassword = this.txtPassword.Text;              //2. 验证数据             // 验证用户输入是否为空，若为空，提示用户信息             if( userName.Equals("") || userPassword.Equals(""))             {                 MessageBox.Show("用户名或密码不能为空！");             }             // 若不为空，验证用户名和密码是否与数据库匹配             // 这里只做字符串对比验证             else             {                    //用户名和密码验证正确，提示成功，并执行跳转界面。                 if( userName.Equals("admin") &amp;&amp; userPassword.Equals("admin"))                 {                     MessageBox.Show("登录成功！");                      /**                      * 待添加代码区域                      * 实现界面跳转功能                      *                       */                 }                 //用户名和密码验证错误，提示错误。                 else                 {                     MessageBox.Show("用户名或密码错误！");                 }             }              //3. 处理数据         }</code></pre> <p>2. 跳转主界面实现</p> <p><span style="color:#4f4f4f;">&nbsp;（1）右键资源管理器中项目名 "blog1"，依次单击 "添加"、"Windows窗体"。</span></p> <p><img loading="lazy" decoding="async" alt="" class="has" height="500" src="http://img.555519.xyz/uploads3/20220904/bb2107e1e97cc2f73dd6bad68b0b7fd6.jpg"><img loading="lazy" decoding="async" alt="" class="has" height="500" src="http://img.555519.xyz/uploads3/20220904/a8202f473a830c6a4a548f20a6be6f62.jpg"></p> <p>（2）单击添加按钮。对新的窗口像前面一样操作，对相应属性进行修改。并且添加一个label，用于界面的辨识。</p> <p><img loading="lazy" decoding="async" alt="" class="has" height="450" src="http://img.555519.xyz/uploads3/20220904/761aedff1d0068e9727e1e3c999b74cf.jpg"></p> <p>（3）在programma.cs中的Main函数中，添加代码：</p> <p><img loading="lazy" decoding="async" alt="" class="has" height="450" src="http://img.555519.xyz/uploads3/20220904/54d4b9c2b7e11838e9c7670842395e24.jpg"></p> <pre class="has"><code class="language-csharp">&nbsp;static void Main()         {             Application.EnableVisualStyles();             Application.SetCompatibleTextRenderingDefault(false);             //Application.Run(new Login());             Login login = new Login();              //界面转换             login.ShowDialog();              if (login.DialogResult == DialogResult.OK)             {                 login.Dispose();                 Application.Run(new MainForm());             }             else if (login.DialogResult == DialogResult.Cancel)             {                 login.Dispose();                 return;             }         }</code>static void Main()         {             Application.EnableVisualStyles();             Application.SetCompatibleTextRenderingDefault(false);             //Application.Run(new Login());             Login login = new Login();              //界面转换             login.ShowDialog();              if (login.DialogResult == DialogResult.OK)             {                 login.Dispose();                 Application.Run(new MainForm());             }             else if (login.DialogResult == DialogResult.Cancel)             {                 login.Dispose();                 return;             }         }</pre> <p>&nbsp;（4）并在Form1.cs中，验证用户名和密码后面（有注释：待添加代码区），添加代码：</p> <pre class="has"><code class="language-csharp">//跳转主界面      this.DialogResult = DialogResult.OK;      this.Dispose();      this.Close();</code></pre> <p>3.启动运行，一起检查代码实现情况。</p> <p style="text-indent:32px;">（1）不输入用户名和密码，单击登录；</p> <p style="text-indent:32px;">（2）正确输入用户名，错误输入密码，单击登录；</p> <p style="text-indent:32px;">（3）正确输入用户名和密码，单击登录；</p> <p style="text-indent:32px;">（4）单击提示框确定按钮，查看跳转情况。</p> <p style="text-indent:32px;"> <p style="text-indent:32px;"><span style="color:#4f4f4f;"><strong>后续：</strong></span><span style="color:#4f4f4f;">我是一个C#的初学者，目前只是学了最基本的语法。想在实践中边练习边学习，</span>于是找了点小项目</p> <p style="text-indent:32px;">作为学习C#的练手利器，文中有错误或者不是很好的地方，望各位大神批评指正。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-22853.htm">动物疫苗的发展现状分析（动物疫苗的发展现状分析）</a></p>
+                                        <p>下一个：<a href="/news/article-23306.htm">自己开一家宠物店（自己开一家宠物店怎么样）</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-4-15-free-high-speed-nodes.htm" title="4月15日21.9M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接">4月15日21.9M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-3-free-high-speed-nodes.htm" title="6月3日20.1M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接">6月3日20.1M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-free-ssr-subscribe.htm" title="11月10日20M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐">11月10日20M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-15-free-v2ray.htm" title="9月15日20.4M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新订阅链接">9月15日20.4M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-24-clash-windows.htm" title="6月24日22M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接">6月24日22M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-3-free-shadowrocket-node.htm" title="12月3日22.8M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，代理机场推荐">12月3日22.8M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-5-node-share-links.htm" title="7月5日22.8M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接">7月5日22.8M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-22-free-v2ray.htm" title="10月22日20.5M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐">10月22日20.5M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-11-free-subscribe-node.htm" title="7月11日20.2M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接">7月11日20.2M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-5-5-node-share-links.htm" title="5月5日18.8M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接">5月5日18.8M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
