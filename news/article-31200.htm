@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-31200.htm" />
+    <title>c# Semaphore（信号量）</title>
+        <meta name="description" content="参考： http://blog.csdn.net/feilongzaitianhehe/article/details/51460529 http://www.cnblogs.com/tianzhil" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+    <link href="__ADDON__/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+                        <a href="/" class="scrollto">Share<span>FreeNode</span></a>
+                        <!-- <a href="#body"><img src="/assets/addons/xcblog/img/sharefreenode/logo.png" alt="" title="" /></a>-->
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>
+                    <a href="#">关于</a>
+                </li>
+                <li>
+                    <a href="#">联系</a>
+                </li>
+            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>c# Semaphore（信号量）</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p><strong>参考：</strong> <br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://blog.csdn.net/feilongzaitianhehe/article/details/51460529"  target="_blank" rel="nofollow">http://blog.csdn.net/feilongzaitianhehe/article/details/51460529</a> <br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.cnblogs.com/tianzhiliang/archive/2010/08/31/1813635.html"  target="_blank" rel="nofollow">http://www.cnblogs.com/tianzhiliang/archive/2010/08/31/1813635.html</a></p> <hr/> <p>信号量说简单点就是为了线程同步，或者说是为了限制线程能运行的数量。</p> <p>那它又是怎么限制线程的数量的哩？是因为它内部有个计数器，比如你想限制最多5个线程运行，那么这个计数器的值就会被设置成5，如果一个线程调用了这个Semaphore，那么它的计数器就会相应的减1，直到这个计数器变为0。这时，如果有另一个线程继续调用这个Semaphore，那么这个线程就会被阻塞。</p> <p>获得Semaphore的线程处理完它的逻辑之后，你就可以调用它的Release()函数将它的计数器重新加1，这样其它被阻塞的线程就可以得到调用了。</p> <hr/> <p>类似互斥锁，但它可以允许多个线程同时访问一个共享资源</p> <p>通过使用一个计数器来控制对共享资源的访问，如果计数器大于0，就允许访问，如果等于0，就拒绝访问。计数器累计的是“许可证”的数目，为了访问某个资源。线程必须从信号量获取一个许可证。</p> <p>通常在使用信号量时，希望访问共享资源的线程将尝试获取一个许可证，如果信号量的计数器大于0，线程将获取一个许可证并将信号量的计数器减1，否则先线程将阻塞，直到获取一个许可证；当线程不再需要共享资源时，将释放锁拥有的许可证，并将许可证的数量加1，如果有其他的线程正在等待许可证，那么该线程将立刻获取许可证。</p> <p>另外，允许同时访问的资源的进程数量是在创建信号量时指定的，如果创建一个允许进程访问的信号量数目为1，则该信号量就和互斥锁的用法一样。</p> <pre class="prettyprint"><code class="hljs cs">        <span class="hljs-comment">//</span>         <span class="hljs-comment">// 摘要:</span>         <span class="hljs-comment">//     初始化 System.Threading.Semaphore 类的新实例，并指定初始入口数和最大并发入口数。</span>         <span class="hljs-comment">//</span>         <span class="hljs-comment">// 参数:</span>         <span class="hljs-comment">//   initialCount:</span>         <span class="hljs-comment">//     可以同时授予的信号量的初始请求数。</span>         <span class="hljs-comment">//</span>         <span class="hljs-comment">//   maximumCount:</span>         <span class="hljs-comment">//     可以同时授予的信号量的最大请求数。</span>         <span class="hljs-comment">//</span>         <span class="hljs-comment">// 异常:</span>         <span class="hljs-comment">//   T:System.ArgumentException:</span>         <span class="hljs-comment">//     initialCount 大于 maximumCount。</span>         <span class="hljs-comment">//</span>         <span class="hljs-comment">//   T:System.ArgumentOutOfRangeException:</span>         <span class="hljs-comment">//     maximumCount 为小于 1。- 或 -initialCount 小于 0。</span>         [SecuritySafeCritical]         <span class="hljs-keyword">public</span> <span class="hljs-title">Semaphore</span>(<span class="hljs-keyword">int</span> initialCount, <span class="hljs-keyword">int</span> maximumCount);</code></pre> <p>获取许可证使用WaitOne（）；</p> <p>不需要时释放使用 public int Release（），或者public int Release（int releaseCount）；</p> <hr/> <p><strong>实例：</strong></p> <pre class="prettyprint"><code class="hljs vala"><span class="hljs-keyword">using</span> System; <span class="hljs-keyword">using</span> System.Collections.Generic; <span class="hljs-keyword">using</span> System.Linq; <span class="hljs-keyword">using</span> System.Text; <span class="hljs-keyword">using</span> System.Threading; <span class="hljs-keyword">using</span> System.Threading.Tasks;  <span class="hljs-class"><span class="hljs-keyword">namespace</span> <span class="hljs-title">ConsoleApp1</span> {<!-- --></span>     <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">mythread</span>     {<!-- --></span>         <span class="hljs-keyword">public</span> Thread m_thread;         <span class="hljs-keyword">static</span> Semaphore m_semaphore = <span class="hljs-keyword">new</span> Semaphore(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>);          <span class="hljs-keyword">public</span> mythread(<span class="hljs-keyword">string</span> name)         {             m_thread = <span class="hljs-keyword">new</span> Thread(<span class="hljs-keyword">this</span>.run);             m_thread.Name = name;             m_thread.Start();         }          <span class="hljs-keyword">void</span> run()         {             Console.WriteLine(m_thread.Name + <span class="hljs-string">":正在等待一个许可证..."</span>);             <span class="hljs-comment">//申请一个许可证</span>             m_semaphore.WaitOne();             Console.WriteLine(m_thread.Name + <span class="hljs-string">":申请到许可证..."</span>);              <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++)             {                 Console.WriteLine(m_thread.Name + <span class="hljs-string">":"</span> + i);                 Thread.Sleep(<span class="hljs-number">1000</span>);             }              Console.WriteLine(m_thread.Name + <span class="hljs-string">":释放许可证..."</span>);             m_semaphore.Release();         }     } } </code></pre> <pre class="prettyprint"><code class="hljs vala"><span class="hljs-keyword">using</span> System; <span class="hljs-keyword">using</span> System.Collections.Generic; <span class="hljs-keyword">using</span> System.IO; <span class="hljs-keyword">using</span> System.Linq; <span class="hljs-keyword">using</span> System.Text; <span class="hljs-keyword">using</span> System.Threading.Tasks;  <span class="hljs-class"><span class="hljs-keyword">namespace</span> <span class="hljs-title">ConsoleApp1</span> {<!-- --></span>     <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>     {<!-- --></span>         <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> Main(<span class="hljs-keyword">string</span>[] args)         {             MySemaphore();         }          <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> MySemaphore()         {             mythread thread1 = <span class="hljs-keyword">new</span> mythread(<span class="hljs-string">"Thrd # 1 "</span>);             mythread thread2 = <span class="hljs-keyword">new</span> mythread(<span class="hljs-string">"Thrd # 2 "</span>);             mythread thread3 = <span class="hljs-keyword">new</span> mythread(<span class="hljs-string">"Thrd # 3 "</span>);             mythread thread4 = <span class="hljs-keyword">new</span> mythread(<span class="hljs-string">"Thrd # 4 "</span>);             thread1.m_thread.Join();             thread2.m_thread.Join();             thread3.m_thread.Join();             thread4.m_thread.Join();         }     } } </code></pre> <hr/> <p><strong>运行结果：</strong></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221230/80398ce249296da50bd8132bdda6a99f.jpg" alt="c# Semaphore（信号量）"></p> <hr/> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-30776.htm">OutOfMemoryError异常_在线工具</a></p>
+                                        <p>下一个：<a href="/news/article-31201.htm">买宠物粮食上哪个网站好（买宠物粮食的app）</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-5-4-free-high-speed-nodes.htm" title="5月4日20.7M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接">5月4日20.7M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-5-node-share-links.htm" title="7月5日22.8M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接">7月5日22.8M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-22-free-clash.htm" title="4月22日22.3M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接">4月22日22.3M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-13-free-shadowrocket-node.htm" title="8月13日18.3M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接">8月13日18.3M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-6-node-share.htm" title="7月6日22.3M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接">7月6日22.3M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-27-free-ssr-node.htm" title="7月27日20.7M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接">7月27日20.7M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-subscribe-node.htm" title="11月13日22.8M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">11月13日22.8M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-16-free-node-subscribe.htm" title="7月16日20M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新订阅链接">7月16日20M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-21021.htm" title="动物疫苗注射的作用机制是什么 动物疫苗注射的作用机制是什么意思">动物疫苗注射的作用机制是什么 动物疫苗注射的作用机制是什么意思</a></li>
+                        <li class="py-2"><a href="/news/article-21472.htm" title="动物医院仪器有哪些种类图片（动物医院常见的诊疗设备）">动物医院仪器有哪些种类图片（动物医院常见的诊疗设备）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
