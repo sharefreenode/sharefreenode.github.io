@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-32202.htm" />
+    <title>带你学MySQL系列 | 什么是数据定义语言(DDL)呢？</title>
+        <meta name="description" content="如果你是刚刚学习MySQL的小白，在你看这篇文章之前，请先看看下面这些文章。有些知识你可能掌握起来有点困难，但请相信我，按照我提供的这个学习流程，反复去看，肯定可以看明白的，这样就不至于到了最后某些知" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+    <link href="__ADDON__/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+                        <a href="/" class="scrollto">Share<span>FreeNode</span></a>
+                        <!-- <a href="#body"><img src="/assets/addons/xcblog/img/sharefreenode/logo.png" alt="" title="" /></a>-->
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>
+                    <a href="#">关于</a>
+                </li>
+                <li>
+                    <a href="#">联系</a>
+                </li>
+            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>带你学MySQL系列 | 什么是数据定义语言(DDL)呢？</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night"> <p>如果你是刚刚学习MySQL的小白，在你看这篇文章之前，请先看看下面这些文章。有些知识你可能掌握起来有点困难，但请相信我，按照我提供的这个学习流程，反复去看，肯定可以看明白的，这样就不至于到了最后某些知识不懂却不知道从哪里下手去查。</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_41261833/article/details/103485032"  rel="nofollow">《MySQL详细安装教程》</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_41261833/article/details/106538921"  rel="nofollow">《MySQL完整卸载教程》</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_41261833/article/details/106491498"  rel="nofollow">《这点基础都不懂，怎么入门MySQL？》</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_41261833/article/details/106223066"  rel="nofollow">《charset=utf8的原理，你真的弄明白了吗？》</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_41261833/article/details/106742277"  rel="nofollow">《MySQL数据类型详解》</a></p> <h2> <a id="1SQL_8" rel="nofollow"></a>1.SQL语言的基本功能介绍</h2> <p>SQL是一种结构化查询语言，主要有如下几个功能：</p> <ul> <li> <code>数据定义语言</code>：全称是Data Definition Language，简称是<code>DDL</code>；</li> <li> <code>数据操纵语言</code>：全称是Data Manipulation Language，建成时<code>DML</code>；</li> <li> <code>数据控制语言</code>：全称是Data Control Language，建成时<code>DCL</code>；</li> </ul> <p>其中最重要的是数据操纵语言<code>(DML)</code>，里面包含了我们常用的功能(增、删、改、查)。对于数据定义语言<code>(DDL)</code>和数据控制语言<code>(DCL)</code>，作为一名数据分析师，我们只需要了解，知道怎么用就行了。<font face="微软雅黑" color="red" size="3">今天就从DDL语言开始，带着大家学习。</font></p> <h2> <a id="2_16" rel="nofollow"></a>2.数据定义语言的用途。</h2> <ul> <li>主要是对数据库对象（数据库、表、视图、索引）的操作。</li> </ul> <p><code>DDL</code>常用命名如下：</p> <table> <thead> <tr> <th>创建</th> <th>修改</th> <th>销毁</th> </tr> </thead> <tbody> <tr> <td>create</td> <td>alter</td> <td>drop</td> </tr> </tbody> </table> <h2> <a id="3_27" rel="nofollow"></a>3.数据库的创建和销毁</h2> <pre><code class="prism language-sql"><span class="token comment">-- 创建数据库：创建student数据库</span> <span class="token keyword">create</span> <span class="token keyword">database</span> <span class="token keyword">if</span> <span class="token operator">not</span> <span class="token keyword">exists</span> student<span class="token punctuation">;</span> <span class="token comment">-- 销毁数据库(少用)</span> <span class="token keyword">drop</span> <span class="token keyword">database</span> <span class="token keyword">if</span> <span class="token keyword">exists</span> student<span class="token punctuation">;</span>  <span class="token comment">-- 创建数据库后，当进行对表的操作之前，必须要先使用数据库。</span> <span class="token keyword">use</span> student<span class="token punctuation">;</span> </code></pre> <h2> <a id="4student_39" rel="nofollow"></a>4.数据库表的操作(所有演示都以student表为例)</h2> <h4> <a id="1_40" rel="nofollow"></a>1）创建表</h4> <pre><code class="prism language-sql"><span class="token number">1</span>）创建表：创建student表 <span class="token comment">-- 创建表结构时需要描述的字段信息</span> <span class="token keyword">create</span> <span class="token keyword">table</span> student<span class="token punctuation">(</span>      sid <span class="token keyword">int</span><span class="token punctuation">,</span>      sname <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>      age <span class="token keyword">int</span> <span class="token punctuation">)</span><span class="token keyword">charset</span><span class="token operator">=</span>utf8<span class="token punctuation">;</span>  <span class="token number">2</span>）<span class="token string">"完整的建表语句"</span>应该这样写 <span class="token keyword">create</span> <span class="token keyword">table</span> student<span class="token punctuation">(</span>      sid <span class="token keyword">int</span><span class="token punctuation">,</span>      sname <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>      age <span class="token keyword">int</span> <span class="token punctuation">)</span><span class="token keyword">engine</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">default</span> <span class="token keyword">charset</span><span class="token operator">=</span>utf8<span class="token punctuation">;</span> 注：由于默认使用的<span class="token keyword">engine</span>就是<span class="token keyword">InnoDB</span>，这个见表时候可以不写。因为对于学习的你，使用这个 默认引擎就够了。但是<span class="token keyword">charset</span><span class="token operator">=</span>utf8这个最好是加上，尤其是在CMD黑窗口中输入中文的时候， 不写这一句，会出现类似如下错误： ERROR <span class="token number">1366</span> <span class="token punctuation">(</span>HY000<span class="token punctuation">)</span>: Incorrect string <span class="token keyword">value</span>: <span class="token string">'\xD5\xC5'</span> <span class="token keyword">for</span> <span class="token keyword">column</span> <span class="token string">'sname'</span> at <span class="token keyword">row</span> <span class="token number">1</span> </code></pre> <p>查看完整建表的SQL语句如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230204/f846ed617d85ea85e7e4ad01453e870b.jpg" alt="带你学MySQL系列 | 什么是数据定义语言(DDL)呢？"></p> <h4> <a id="2_66" rel="nofollow"></a>2）修改表</h4> <h5> <a id="__67" rel="nofollow"></a>① 修改表名</h5> <pre><code class="prism language-sql"><span class="token comment">-- 将表名student改为stu。</span> <span class="token keyword">rename</span> <span class="token keyword">table</span> student <span class="token keyword">to</span> stu<span class="token punctuation">;</span> <span class="token comment">-- 修改数据库名。</span> <span class="token keyword">rename</span> <span class="token keyword">database</span> 旧名 <span class="token keyword">to</span> 新名<span class="token punctuation">;</span> </code></pre> <h5> <a id="__76" rel="nofollow"></a>② 修改表结构</h5> <ul> <li>修改表结构中包含<code>给表添加某个新字段</code>，<code>修改表中某个字段</code>，<code>删除表中某个字段</code>；</li> </ul> <h6> <a id="__79" rel="nofollow"></a>Ⅰ 给表添加某个新字段</h6> <pre><code class="prism language-sql"><span class="token string">"添加字段：给student表，添加一个新的字段。"</span> <span class="token number">1</span>）默认是追加，即在最后一列添加新的字段。 <span class="token keyword">alter</span> <span class="token keyword">table</span> student <span class="token keyword">add</span> sex <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token number">2</span>）在首位添加新的字段，使用<span class="token keyword">first</span>关键字。 <span class="token keyword">alter</span> <span class="token keyword">table</span> student <span class="token keyword">add</span> classid <span class="token keyword">int</span> <span class="token keyword">first</span><span class="token punctuation">;</span>  <span class="token number">3</span>）在指定位置添加新的字段，使用<span class="token keyword">after</span>关键字<span class="token punctuation">(</span>在指定字段后面添加新字段<span class="token punctuation">)</span>。 <span class="token keyword">alter</span> <span class="token keyword">table</span> student <span class="token keyword">add</span> birthday <span class="token keyword">date</span> <span class="token keyword">after</span> age<span class="token punctuation">;</span>  <span class="token string">"查看表结构：可以帮助我们了解表的结构信息"</span> <span class="token keyword">desc</span> student<span class="token punctuation">;</span> </code></pre> <h6> <a id="__96" rel="nofollow"></a>Ⅱ 修改表中某个字段</h6> <pre><code class="prism language-sql"><span class="token number">1</span>）<span class="token string">"修改字段名称"</span>：change <span class="token comment">-- 修改字段age的名称，为sage。</span> <span class="token comment">-- modify不能直接修改字段名称，其余能用change的地方，就可以用modify。</span> <span class="token keyword">alter</span> <span class="token keyword">table</span> student change age sage <span class="token keyword">int</span><span class="token punctuation">;</span>  <span class="token number">2</span>）<span class="token string">"修改字段类型"</span>：既可以使用change，还可以使用<span class="token keyword">modify</span>。 <span class="token string">"还可以修改varchar(m)中这个m的长度"</span>。 <span class="token comment">-- 修改sname字段的数据类型由varchar(20)为varchar(50)。</span> <span class="token comment">-- 可以使用如下两种方式：</span> <span class="token keyword">alter</span> <span class="token keyword">table</span> student change sname sname <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">alter</span> <span class="token keyword">table</span> student <span class="token keyword">modify</span> sname <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token number">3</span>）<span class="token string">"修改字段位置"</span>：可以配合使用<span class="token keyword">first</span>、<span class="token keyword">after</span>关键字。 <span class="token comment">-- 将sname字段，放置到age后面。可以使用如下两种方式：</span> <span class="token keyword">alter</span> <span class="token keyword">table</span> student change sname sname <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token keyword">after</span> age<span class="token punctuation">;</span> <span class="token keyword">alter</span> <span class="token keyword">table</span> student <span class="token keyword">modify</span> sname <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token keyword">after</span> age<span class="token punctuation">;</span> </code></pre> <h6> <a id="__117" rel="nofollow"></a>Ⅲ 删除表中某个字段</h6> <pre><code class="prism language-sql"><span class="token comment">-- 删除classid这个字段</span> <span class="token keyword">alter</span> <span class="token keyword">table</span> student <span class="token keyword">drop</span> classid<span class="token punctuation">;</span> </code></pre> <h5> <a id="__125" rel="nofollow"></a>③ 清空表：清空表中所有数据。</h5> <ul> <li>truncate只删除数据但是不删除表结构；</li> <li>注意truncate与delete的区别，都用于删除表中数据，区别在哪里呢？可以自行查看。</li> </ul> <pre><code class="prism language-sql"><span class="token keyword">truncate</span> <span class="token keyword">table</span> stu<span class="token punctuation">;</span> </code></pre> <h4> <a id="3_132" rel="nofollow"></a>3）销毁表</h4> <pre><code class="prism language-sql"><span class="token keyword">drop</span> <span class="token keyword">table</span> stu<span class="token punctuation">;</span> </code></pre> <p> <br />    </p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-31726.htm">益康动物医院地址（益康宠物诊所）</a></p>
+                                        <p>下一个：<a href="/news/article-32204.htm">领养回访多久可以结束 领养回访多久可以结束呢</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-9-8-free-shadowrocket-node.htm" title="9月8日22M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接">9月8日22M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-15-free-subscribe-node.htm" title="6月15日20.1M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接">6月15日20.1M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-23768.htm" title="动物疫苗一针多少钱啊图片视频大全（动物疫苗一针多少钱啊图片视频大全大图）">动物疫苗一针多少钱啊图片视频大全（动物疫苗一针多少钱啊图片视频大全大图）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-18-free-v2ray.htm" title="9月18日22.1M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接">9月18日22.1M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-25-node-share-links.htm" title="4月25日22.4M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接">4月25日22.4M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-free-v2ray-subscribe.htm" title="10月15日20M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接，代理机场推荐">10月15日20M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-15-free-high-speed-nodes.htm" title="4月15日21.9M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接">4月15日21.9M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-13-free-v2ray-subscribe.htm" title="12月13日20M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐">12月13日20M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-26565.htm" title="dell bios ssd启动 戴尔bios设置ssd启动">dell bios ssd启动 戴尔bios设置ssd启动</a></li>
+                        <li class="py-2"><a href="/news/article-29337.htm" title="领养狗的好处和坏处（领养狗的好处和坏处有哪些）">领养狗的好处和坏处（领养狗的好处和坏处有哪些）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
