@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-34925.htm" />
+    <title>springboot Jar包 秒部署到Linux服务器运行</title>
+        <meta name="description" content="最近开发完一个springboot项目，打包成jar包之后要部署到Linux服务器上面运行，我用的nohup java -jar 命令，但是代码更新之后重新部署的时候覆盖原来的项目，又要手动运行 ps" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+    <link href="__ADDON__/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+                        <a href="/" class="scrollto">Share<span>FreeNode</span></a>
+                        <!-- <a href="#body"><img src="/assets/addons/xcblog/img/sharefreenode/logo.png" alt="" title="" /></a>-->
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>
+                    <a href="#">关于</a>
+                </li>
+                <li>
+                    <a href="#">联系</a>
+                </li>
+            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>springboot Jar包 秒部署到Linux服务器运行</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>最近开发完一个springboot项目，打包成jar包之后要部署到Linux服务器上面运行，我用的nohup java -jar 命令，但是代码更新之后重新部署的时候覆盖原来的项目，又要手动运行</p> <p>ps -ef|grep jar包名 去查找进程，然后kill -9 去kill进程，有时候nohup进程老是kill不掉,只能多试几次，烦不胜烦。后来专门花时间研究了一下脚本和本地window上传文件到linux服务器的命令，整合了一个启动脚本，顿时项目部署变得无比简单，一分钟内在线上的代码就可以更新了。下面是具体步骤：</p> <p>1、在idea上写一个maven 打包命令 ： clean package -DskipTests=true &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (打包跳过测试，打包更快)</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230110/b5bf80c3373d58da3bcfe97df1b1a9a8.jpg" alt="springboot Jar包 秒部署到Linux服务器运行"></p> <p><span style="white-space:pre"><br /></span></p> <p><span style="white-space:pre">2</span>、运行 package 打包，会在项目根路径target下面生成jar包</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230110/8d1da44f6e9942f999094f733e7ccb73.jpg" alt="springboot Jar包 秒部署到Linux服务器运行"></p> <p>3、接下来我们要把本地项目jar包上传到Linux服务器上面，怎么快速上传呢？主要有两种方式：</p> <p>一、直接用鼠标拉取jar包到Xftp文件夹下，如下图</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230110/a2bb06c0b8776cd0a50b516697e95d3b.jpg" alt="springboot Jar包 秒部署到Linux服务器运行"></p> <p></p> <p>二、直接在用命令上传，比较推荐这种，不用再去打开target文件夹了，也不用再拉取了</p> <p>我们先安装一个文件上传和下载的工具软件包 ：yum -y install lrzsz &nbsp; &nbsp;</p> <p>lrzsz包安装完成后包括上传rz、下载sz命令</p> <p>然后我们可以 输入命令 rz -y &nbsp; &nbsp; ，（rz 代表上传， -y 可以强制覆盖文件），会弹出一个文件选择框，我们可以鼠标选择jar包位置，确定即可，下次再上传的时候会直接弹出jar包窗口，当然下次用的时候也可以用tab键光标跳转选择，这就完全不用鼠标了，注意下面发送文件到ASCII不要打钩<img decoding="async" src="http://img.555519.xyz/uploads/20230110/b70614b72786db36871976286965534c.jpg" alt="springboot Jar包 秒部署到Linux服务器运行"></p> <p></p> <p>4、最后就是重头戏了，项目重启的脚本，写个start.sh 的脚本，注意脚本和jar包同级目录 ，&nbsp;如下：</p> <pre><code class="language-java">#!/bin/sh RESOURCE_NAME=resource-0.0.1-SNAPSHOT.jar  tpid=`ps -ef|grep $RESOURCE_NAME|grep -v grep|grep -v kill|awk '{print $2}'` if [ ${tpid} ]; then echo 'Stop Process...' kill -15 $tpid fi sleep 5 tpid=`ps -ef|grep $RESOURCE_NAME|grep -v grep|grep -v kill|awk '{print $2}'` if [ ${tpid} ]; then echo 'Kill Process!' kill -9 $tpid else echo 'Stop Success!' fi  tpid=`ps -ef|grep $RESOURCE_NAME|grep -v grep|grep -v kill|awk '{print $2}'` if [ ${tpid} ]; then     echo 'App is running.' else     echo 'App is NOT running.' fi   rm -f tpid nohup java -jar ./$RESOURCE_NAME --spring.profiles.active=test &amp; echo $! &gt; tpid echo Start Success! </code></pre> <p> 5、脚本运行 &nbsp;&nbsp;</p> <p>cd /home (我是把jar包和脚本放在home下面)</p> <p>chmod +x start.sh (第一次运行的时候获取一下超级管理员权限)</p> <p>然后以后每次运行直接</p> <p>./start.sh 即可</p> <p></p> <p>拷贝脚本的时候运行的时候如果报错，应该是文件格式转换的问题</p> </h1> <p>可以 &nbsp;yum -y install dos2unix &nbsp;</p> <p>然后 dos2unix start.sh&nbsp;</p> <p>重新运行脚本</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-34596.htm">给动物打针打哪里最疼（给动物打针打哪里最疼呢）</a></p>
+                                        <p>下一个：<a href="/news/article-34926.htm">重庆哪里可以领养宠物猫咪的（重庆哪里可以领养猫猫）</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-19643.htm" title="猫咪疫苗三针多少钱（猫咪的三针疫苗多少钱）">猫咪疫苗三针多少钱（猫咪的三针疫苗多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-29-free-ssr-node.htm" title="4月29日19M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新订阅链接">4月29日19M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-33175.htm" title="开宠物店亏死了多少人啊知乎文章（开宠物店亏损多吗）">开宠物店亏死了多少人啊知乎文章（开宠物店亏损多吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-5-16-free-clash-subscribe.htm" title="5月16日19.7M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新订阅链接">5月16日19.7M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-15-free-node-subscribe.htm" title="8月15日21.1M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接">8月15日21.1M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-12-free-clash-subscribe.htm" title="7月12日21.2M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接">7月12日21.2M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-24-node-share.htm" title="4月24日22M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接">4月24日22M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-21-free-v2ray-subscribe.htm" title="4月21日22.6M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接">4月21日22.6M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-32202.htm" title="带你学MySQL系列 | 什么是数据定义语言(DDL)呢？">带你学MySQL系列 | 什么是数据定义语言(DDL)呢？</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-6-node-share-links.htm" title="6月6日19.3M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接">6月6日19.3M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
