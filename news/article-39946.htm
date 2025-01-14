@@ -85,6 +85,7 @@
                   				  				  				<p>文件移动(Move)操作和文件的复制(Copy)是C#程式开发经常遇到的方法，根据传入的源文件地址和目标文件地址参数，实现对文件的操作。实现代码如下：</p> <h3>Move操作代码</h3> <div class="ay1code"> <pre class="brush:csharp;">public static void MoveFolder(string sourcePath, string destPath)          {              if (Directory.Exists(sourcePath))              {                  if (!Directory.Exists(destPath))                  {                      //目标目录不存在则创建                        try                      {                          Directory.CreateDirectory(destPath);                      }                      catch (Exception ex)                      {                          throw new Exception("创建目标目录失败：" + ex.Message);                      }                  }                  //获得源文件下所有文件                    List&lt;string&gt; files = new List&lt;string&gt;(Directory.GetFiles(sourcePath));                  files.ForEach(c =&gt;                  {                      string destFile = Path.Combine(new string[] { destPath, Path.GetFileName(c) });                      //覆盖模式                        if (File.Exists(destFile))                      {                          File.Delete(destFile);                      }                      File.Move(c, destFile);                  });                  //获得源文件下所有目录文件                    List&lt;string&gt; folders = new List&lt;string&gt;(Directory.GetDirectories(sourcePath));                    folders.ForEach(c =&gt;                  {                      string destDir = Path.Combine(new string[] { destPath, Path.GetFileName(c) });                      //Directory.Move必须要在同一个根目录下移动才有效，不能在不同卷中移动。                        //Directory.Move(c, destDir);                          //采用递归的方法实现                        MoveFolder(c, destDir);                  });              }              else              {}          }         </pre> </div> <h3>Copy操作代码</h3> <div class="ay1code"> <pre class="brush:csharp;">public static void CopyFilefolder(string sourceFilePath, string targetFilePath)          {              //获取源文件夹中的所有非目录文件              string[] files = Directory.GetFiles(sourceFilePath);              string fileName;              string destFile;              //如果目标文件夹不存在，则新建目标文件夹              if (!Directory.Exists(targetFilePath))              {                  Directory.CreateDirectory(targetFilePath);              }              //将获取到的文件一个一个拷贝到目标文件夹中                foreach (string s in files)              {                  fileName = Path.GetFileName(s);                  destFile = Path.Combine(targetFilePath, fileName);                  File.Copy(s, destFile, true);              }              //上面一段在MSDN上可以看到源码                 //获取并存储源文件夹中的文件夹名              string[] filefolders = Directory.GetFiles(sourceFilePath);              //创建Directoryinfo实例               DirectoryInfo dirinfo = new DirectoryInfo(sourceFilePath);              //获取得源文件夹下的所有子文件夹名              DirectoryInfo[] subFileFolder = dirinfo.GetDirectories();              for (int j = 0; j &lt; subFileFolder.Length; j++)              {                  //获取所有子文件夹名                   string subSourcePath = sourceFilePath + "\\" + subFileFolder[j].ToString();                  string subTargetPath = targetFilePath + "\\" + subFileFolder[j].ToString();                  //把得到的子文件夹当成新的源文件夹，递归调用CopyFilefolder                  CopyFilefolder(subSourcePath, subTargetPath);              }          }</pre> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-39945.htm">VUE实现某区域中拖拽效果</a></p>
+                                        <p>下一个：<a href="/news/article-40453.htm">显卡除了a卡n卡还有什么(哪些显卡是a卡)</a></p>
                                     </div>
                                             </div>
                         </div>
@@ -97,16 +98,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-11-5-shadowrocket-node.htm" title="11月5日20.7M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">11月5日20.7M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-7-free-high-speed-nodes.htm" title="10月7日22.1M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接">10月7日22.1M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-9-free-subscribe-node.htm" title="1月9日21.1M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐">1月9日21.1M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/news/article-28878.htm" title="被野猫抓破了一点点血需要打狂犬疫苗吗（被野猫抓了一下出了点血要打疫苗吗）">被野猫抓破了一点点血需要打狂犬疫苗吗（被野猫抓了一下出了点血要打疫苗吗）</a></li>
-                        <li class="py-2"><a href="/news/article-39945.htm" title="VUE实现某区域中拖拽效果">VUE实现某区域中拖拽效果</a></li>
-                        <li class="py-2"><a href="/news/article-36503.htm" title="宠物领养活动宣传语（宠物领养活动方案）">宠物领养活动宣传语（宠物领养活动方案）</a></li>
-                        <li class="py-2"><a href="/news/article-19643.htm" title="猫咪疫苗三针多少钱（猫咪的三针疫苗多少钱）">猫咪疫苗三针多少钱（猫咪的三针疫苗多少钱）</a></li>
-                        <li class="py-2"><a href="/news/article-28422.htm" title="Vue如何为GET或POST请求设置请求头_vue.js">Vue如何为GET或POST请求设置请求头_vue.js</a></li>
-                        <li class="py-2"><a href="/news/article-34925.htm" title="springboot Jar包 秒部署到Linux服务器运行">springboot Jar包 秒部署到Linux服务器运行</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-24-clash-node.htm" title="10月24日21.9M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接，代理机场推荐">10月24日21.9M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-38467.htm" title="SpringBoot打包所有依赖jar包和配置文件全部分离">SpringBoot打包所有依赖jar包和配置文件全部分离</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-25-clash-node.htm" title="11月25日20.3M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，代理机场推荐">11月25日20.3M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-18632.htm" title="宠物帮领养中心app（宠物帮领养中心的领养信息如何删）">宠物帮领养中心app（宠物帮领养中心的领养信息如何删）</a></li>
+                        <li class="py-2"><a href="/news/article-21020.htm" title="Spingboot Resttemplate连接池配置">Spingboot Resttemplate连接池配置</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-17-free-node-subscribe-links.htm" title="10月17日19.3M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">10月17日19.3M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-shadowrocket-node.htm" title="11月22日19M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">11月22日19M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-24-free-high-speed-nodes.htm" title="12月24日18.4M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">12月24日18.4M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-3-free-high-speed-nodes.htm" title="11月3日20.4M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐">11月3日20.4M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-12-free-clash-subscribe.htm" title="10月12日19M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接">10月12日19M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-21-clash-v2ray-ss-ssr.htm" title="10月21日19.2M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">10月21日19.2M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -118,7 +119,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">41</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
