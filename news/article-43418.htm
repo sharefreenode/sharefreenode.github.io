@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-43418.htm" />
+    <title>ES6 解构赋值详解</title>
+        <meta name="description" content="变量名与属性名相同时使用，用 {} 包裹 let config={   server:'localhost',   port:'8080',   timeout:900,}let{server,por" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ShareFreeNode节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sharefreenode.github.io/news/article-43418.htm" />
+    <meta property="og:site_name" content="ShareFreeNode节点订阅站" />
+    <meta property="og:title" content="ES6 解构赋值详解" />
+    <meta property="og:image" content="https://sharefreenode.github.io/uploads/20240415/0209417c3cc4f420fc26bd993213075d.webp" />
+        <meta property="og:release_date" content="2025-01-20T07:11:54" />
+    <meta property="og:updated_time" content="2025-01-20T07:11:54" />
+        <meta property="og:description" content="变量名与属性名相同时使用，用 {} 包裹 let config={   server:'localhost',   port:'8080',   timeout:900,}let{server,por" />
+        
+    <link href="/assets/website/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+                        <a href="/" class="scrollto">Share<span>FreeNode</span></a>
+                        <!-- <a href="#body"><img src="/assets/addons/xcblog/img/sharefreenode/logo.png" alt="" title="" /></a>-->
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>
+                    <a href="#">关于</a>
+                </li>
+                <li>
+                    <a href="#">联系</a>
+                </li>
+            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>ES6 解构赋值详解</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night-eighties"> <blockquote> </h1> </blockquote> <p>变量名与属性名相同时使用，用 {} 包裹</p> <pre><code class="prism language-js"><span class="token keyword">let</span> config<span class="token operator">=</span><span class="token punctuation">{<!-- --></span>   server<span class="token operator">:</span><span class="token string">'localhost'</span><span class="token punctuation">,</span>   port<span class="token operator">:</span><span class="token string">'8080'</span><span class="token punctuation">,</span>   timeout<span class="token operator">:</span><span class="token number">900</span><span class="token punctuation">,</span><span class="token punctuation">}</span><span class="token keyword">let</span><span class="token punctuation">{<!-- --></span>server<span class="token punctuation">,</span>port<span class="token punctuation">}</span><span class="token operator">=</span> config console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>server<span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token comment">//"localhost" "8080"</span></code></pre> <p>可以自定义变量名：</p> <pre><code class="prism language-js"><span class="token keyword">let</span><span class="token punctuation">{<!-- --></span>timeout<span class="token operator">:</span> t<span class="token punctuation">}</span><span class="token operator">=</span>config console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token comment">//900</span></code></pre> <p>将对象的属性值赋值给已经声明过的变量，<strong>需要在外面加上小括号</strong>：</p> <pre><code class="prism language-js"><span class="token keyword">let</span> config<span class="token operator">=</span><span class="token punctuation">{<!-- --></span>   server<span class="token operator">:</span><span class="token string">'localhost'</span><span class="token punctuation">,</span>   port<span class="token operator">:</span><span class="token string">'8080'</span><span class="token punctuation">,</span>   timeout<span class="token operator">:</span><span class="token number">900</span><span class="token punctuation">,</span><span class="token punctuation">}</span><span class="token keyword">let</span> server<span class="token operator">=</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">;</span><span class="token keyword">let</span> port<span class="token operator">=</span><span class="token string">'80'</span><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>server<span class="token punctuation">,</span>port<span class="token punctuation">}</span><span class="token operator">=</span> config<span class="token punctuation">)</span><span class="token comment">//用()赋值</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>server<span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token comment">//"localhost" "8080"</span></code></pre> <p>为函数传参时，也可以使用解构赋值的方式</p> <pre><code class="prism language-js"><span class="token keyword">let</span> config<span class="token operator">=</span><span class="token punctuation">{<!-- --></span>   server<span class="token operator">:</span><span class="token string">'localhost'</span><span class="token punctuation">,</span>   port<span class="token operator">:</span><span class="token string">'8080'</span><span class="token punctuation">,</span>   timeout<span class="token operator">:</span><span class="token number">900</span><span class="token punctuation">,</span><span class="token punctuation">}</span><span class="token keyword">let</span> server<span class="token operator">=</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">;</span><span class="token keyword">let</span> port<span class="token operator">=</span><span class="token string">'80'</span><span class="token punctuation">;</span><span class="token keyword">let</span> timeout<span class="token operator">=</span><span class="token string">'100'</span><span class="token punctuation">;</span><span class="token keyword">function</span><span class="token function">startServer</span><span class="token punctuation">(</span><span class="token parameter">configValue</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>configValue<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token function">startServer</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>server<span class="token punctuation">,</span>port<span class="token punctuation">,</span>timeout<span class="token punctuation">}</span><span class="token operator">=</span> config<span class="token punctuation">)</span></code></pre> <p>赋值的变量名在对象中找不到与之匹配的属性名，这个变量的值会变成undefined。</p> <p>可以为变量设置默认值：</p> <pre><code class="prism language-js"><span class="token keyword">let</span> config<span class="token operator">=</span><span class="token punctuation">{<!-- --></span>   server<span class="token operator">:</span><span class="token string">'localhost'</span><span class="token punctuation">,</span>   port<span class="token operator">:</span><span class="token string">'8080'</span><span class="token punctuation">}</span><span class="token keyword">let</span><span class="token punctuation">{<!-- --></span>server<span class="token punctuation">,</span>port<span class="token punctuation">,</span>timeout<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token operator">=</span> config console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>timeout<span class="token punctuation">)</span></code></pre> <blockquote> </h1> </blockquote> <p>变量顺序与数组中元素的顺序要保持一致，用 [ ] 包裹</p> <pre><code class="prism language-js"><span class="token keyword">const</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">]</span><span class="token keyword">const</span><span class="token punctuation">[</span>x<span class="token punctuation">,</span>y<span class="token punctuation">]</span><span class="token operator">=</span> arr console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token operator">/</span><span class="token string">"a"</span><span class="token string">"b"</span></code></pre> <p>如果想跳过数组中的某个元素，可以采取下面这种方法：</p> <pre><code class="prism language-js"><span class="token keyword">const</span> days<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'Thursday'</span><span class="token punctuation">,</span><span class="token string">'Friday'</span><span class="token punctuation">,</span><span class="token string">'Saturday'</span><span class="token punctuation">,</span><span class="token string">'Sunday'</span><span class="token punctuation">]</span><span class="token keyword">const</span><span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token punctuation">,</span>sat<span class="token punctuation">,</span>sun<span class="token punctuation">]</span><span class="token operator">=</span> days console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>sat<span class="token punctuation">,</span>sun<span class="token punctuation">)</span><span class="token comment">//"Saturday" "Sunday"</span></code></pre> <p>配合剩余操作符（…）将数组中剩余的所有元素以数组的形式赋值给变量（剩余操作符在使用时只能被放置在最后）</p> <pre><code class="prism language-js"><span class="token keyword">const</span><span class="token punctuation">[</span>x<span class="token punctuation">,</span><span class="token operator">...</span>y<span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">// x='a'; y=['b', 'c']</span></code></pre> <blockquote> </h1> </blockquote> <p>解构赋值实现便捷的互换赋值（不再需要临时中间变量）</p> <pre><code class="prism language-js"><span class="token keyword">let</span> a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> b<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token punctuation">[</span>b<span class="token punctuation">,</span>a<span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span>a<span class="token punctuation">,</span>b<span class="token punctuation">]</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token comment">//2 1</span></code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-43417.htm">C ++程序，用于实现两个数相乘的Schonhage-Strassen算法</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-37001.htm" title="动物医院地址查询官网电话（动物医院大众点评）">动物医院地址查询官网电话（动物医院大众点评）</a></li>
+                        <li class="py-2"><a href="/news/article-19644.htm" title="开宠物店需要什么手续和证件（开宠物店需要什么手续和证件流程）">开宠物店需要什么手续和证件（开宠物店需要什么手续和证件流程）</a></li>
+                        <li class="py-2"><a href="/news/article-20558.htm" title="spring boot Actuator之自定义Endpoint">spring boot Actuator之自定义Endpoint</a></li>
+                        <li class="py-2"><a href="/news/article-30307.htm" title="快速排序Java代码实现">快速排序Java代码实现</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-free-clash-subscribe.htm" title="11月18日18.7M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">11月18日18.7M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-6-shadowrocket-node.htm" title="12月6日21.7M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接，代理机场推荐">12月6日21.7M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-27950.htm" title="动物防疫站可以看病么（动物疫病防控中心可以打疫苗吗）">动物防疫站可以看病么（动物疫病防控中心可以打疫苗吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-5-shadowrocket-node.htm" title="11月5日20.7M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">11月5日20.7M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-27028.htm" title="开宠物店会血本无归吗（开宠物店会血本无归吗）">开宠物店会血本无归吗（开宠物店会血本无归吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-4-free-ssr-node.htm" title="11月4日23M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐">11月4日23M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">59</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
