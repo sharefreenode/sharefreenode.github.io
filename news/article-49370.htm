@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-49370.htm" />
+    <title>常见 几种 git操作代码回退的方法</title>
+        <meta name="description" content="第一种：当你git commit后 没有push 你想回退 这种情况发生在你的本地代码仓库,可能你add ,commit 以后发现代码有点问题,想要从取消 git reset .... 如果是撤销某个" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ShareFreeNode节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sharefreenode.github.io/news/article-49370.htm" />
+    <meta property="og:site_name" content="ShareFreeNode节点订阅站" />
+    <meta property="og:title" content="常见 几种 git操作代码回退的方法" />
+    <meta property="og:image" content="https://sharefreenode.github.io/uploads/20240415/0209417c3cc4f420fc26bd993213075d.webp" />
+        <meta property="og:release_date" content="2025-02-01T07:13:35" />
+    <meta property="og:updated_time" content="2025-02-01T07:13:35" />
+        <meta property="og:description" content="第一种：当你git commit后 没有push 你想回退 这种情况发生在你的本地代码仓库,可能你add ,commit 以后发现代码有点问题,想要从取消 git reset .... 如果是撤销某个" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="常见 几种 git操作代码回退的方法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <link href="/assets/website/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+                        <a href="/" class="scrollto">Share<span>FreeNode</span></a>
+                        <!-- <a href="#body"><img src="/assets/addons/xcblog/img/sharefreenode/logo.png" alt="" title="" /></a>-->
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>
+                    <a href="#">关于</a>
+                </li>
+                <li>
+                    <a href="#">联系</a>
+                </li>
+            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>常见 几种 git操作代码回退的方法</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h4><a id="git_commit_push__0" rel="nofollow"></a>第一种：当你git commit后 没有push 你想回退</h4> <p>这种情况发生在你的本地代码仓库,可能你add ,commit 以后发现代码有点问题,想要从取消</p> <p><code>git reset ....</code><br /> 如果是撤销某个文件或文件夹：<br /> 首先使用你德使用git status 查看比提交的状态</p> <h4><a id="push_9" rel="nofollow"></a>第二种：当你push后想要回退代码</h4> <p><code>使用 git revert ....</code></p> <p>首先你得使用 Git log 查看提交历史</p> <h3><a id="1git_log___SHA1__13" rel="nofollow"></a>1.不传入任何参数的默认情况下，git log 会按时间先后顺序列出所有的提交，最近的更新排在最上面。 正如你所看到的，这个命令会列出每个提交的 SHA-1 校验和、作者的名字和电子邮件地址、提交时间以及提交说明。</h3> <pre><code>git log -p -2</code></pre> <h4><a id="2__2__17" rel="nofollow"></a>2 .你也可以限制显示的日志条目数量，例如使用 -2 选项来只显示最近的两次提交：</h4> <pre><code>git log -p -2</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/fb4fa86c9fccc6a8cdf002dbbf0e9f37.jpg" alt="常见 几种 git操作代码回退的方法"><br /> 回退使用git revert</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/d66f0e37793ed1414dc856d2da409760.jpg" alt="常见 几种 git操作代码回退的方法"><br /><code>使用git revert 回退 他会把提交的东西全部删除，从文件件里面删除。慎用。一般不提倡使用revert</code></p> <p>第一:</p> <p>上面我们说的如果你已经push到线上代码库, reset 删除指定commit以后,你git push可能导致一大堆冲突.但是revert 并不会.</p> <p>第二:</p> <p>如果在日后现有分支和历史分支需要合并的时候,reset 恢复部分的代码依然会出现在历史分支里.但是revert 方向提交的commit 并不会出现在历史分支里.</p> <p>第三:</p> <p>reset 是在正常的commit历史中,删除了指定的commit,这时 HEAD 是向后移动了,而 revert 是在正常的commit历史中再commit一次,只不过是反向提交,他的 HEAD 是一直向前的.</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-48846.htm">动物疫苗前景分析（动物疫苗现状）</a></p>
+                                        <p>下一个：<a href="/news/article-49371.htm">猫轻微抓伤需要打几针（猫轻微抓伤需要打几针疫苗）</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-29-clash-node.htm" title="10月29日20.5M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">10月29日20.5M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-18632.htm" title="宠物帮领养中心app（宠物帮领养中心的领养信息如何删）">宠物帮领养中心app（宠物帮领养中心的领养信息如何删）</a></li>
+                        <li class="py-2"><a href="/news/article-31725.htm" title="公务员国考2021年报名 公务员国考2021年报名人数">公务员国考2021年报名 公务员国考2021年报名人数</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-free-v2ray-subscribe.htm" title="10月15日20M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接，代理机场推荐">10月15日20M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-15-shadowrocket-node.htm" title="1月15日20M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐">1月15日20M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-49873.htm" title="上海宠物繁殖基地电话（上海宠物繁育基地）">上海宠物繁殖基地电话（上海宠物繁育基地）</a></li>
+                        <li class="py-2"><a href="/news/article-42920.htm" title="动物医院名字大全集最新版英文（动物医院名字大全集最新版英文）">动物医院名字大全集最新版英文（动物医院名字大全集最新版英文）</a></li>
+                        <li class="py-2"><a href="/news/article-38974.htm" title="天津宠物领养中心官网招聘 天津宠物领养中心官网招聘信息">天津宠物领养中心官网招聘 天津宠物领养中心官网招聘信息</a></li>
+                        <li class="py-2"><a href="/news/article-49371.htm" title="猫轻微抓伤需要打几针（猫轻微抓伤需要打几针疫苗）">猫轻微抓伤需要打几针（猫轻微抓伤需要打几针疫苗）</a></li>
+                        <li class="py-2"><a href="/news/article-23768.htm" title="动物疫苗一针多少钱啊图片视频大全（动物疫苗一针多少钱啊图片视频大全大图）">动物疫苗一针多少钱啊图片视频大全（动物疫苗一针多少钱啊图片视频大全大图）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
