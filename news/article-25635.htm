@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <meta charset="utf-8">
@@ -9,18 +9,46 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <!-- Favicons -->
     <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
-    <link href="__ADDON__/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <meta name="author" content="ShareFreeNode节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sharefreenode.github.io/news/article-25635.htm" />
+    <meta property="og:site_name" content="ShareFreeNode节点订阅站" />
+    <meta property="og:title" content="Java-NIO之Buffer（缓冲区）" />
+    <meta property="og:image" content="https://sharefreenode.github.io/uploads/20240415/348e6bf6f973817c1c43b86bcf11f7d5.webp" />
+        <meta property="og:release_date" content="2024-12-14T10:12:21" />
+    <meta property="og:updated_time" content="2024-12-14T10:12:21" />
+        <meta property="og:description" content="Buffer（缓冲区）本质上是一个由基本类型数组构成的容器。 我们先看看Buffer类的基本构成： public abstract class Buffer {     // Invariants: " />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java-NIO之Buffer（缓冲区）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <link href="/assets/website/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
     <!-- Bootstrap CSS File -->
-    <link href="__ADDON__/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Libraries CSS Files -->
-    <link href="__ADDON__/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
     <!-- Main Stylesheet File -->
     <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
@@ -98,16 +126,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-6-9-free-v2ray-subscribe.htm" title="6月9日18.6M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接">6月9日18.6M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-17-free-node-subscribe-links.htm" title="8月17日22.3M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接">8月17日22.3M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-8-free-v2ray-subscribe.htm" title="8月8日21.6M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接">8月8日21.6M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-15-free-node-subscribe-links.htm" title="12月15日19.3M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">12月15日19.3M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-17-free-node-subscribe-links.htm" title="10月17日19.3M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">10月17日19.3M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-5-12-free-subscribe-node.htm" title="5月12日21.4M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接">5月12日21.4M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-4-23-free-ssr-subscribe.htm" title="4月23日19M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接">4月23日19M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-19644.htm" title="开宠物店需要什么手续和证件（开宠物店需要什么手续和证件流程）">开宠物店需要什么手续和证件（开宠物店需要什么手续和证件流程）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-25-free-v2ray.htm" title="7月25日22.8M/S|Clash/Shadowrocket/V2ray/SSR免费节点每天更新订阅链接">7月25日22.8M/S|Clash/Shadowrocket/V2ray/SSR免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-31-node-share-links.htm" title="12月31日18M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">12月31日18M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-32204.htm" title="领养回访多久可以结束 领养回访多久可以结束呢">领养回访多久可以结束 领养回访多久可以结束呢</a></li>
+                        <li class="py-2"><a href="/news/article-32202.htm" title="带你学MySQL系列 | 什么是数据定义语言(DDL)呢？">带你学MySQL系列 | 什么是数据定义语言(DDL)呢？</a></li>
+                        <li class="py-2"><a href="/news/article-20100.htm" title="打过疫苗的动物抓伤要打针吗（打了疫苗的动物用不用打狂犬疫苗）">打过疫苗的动物抓伤要打针吗（打了疫苗的动物用不用打狂犬疫苗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-29-node-share-links.htm" title="12月29日22.4M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新订阅链接，代理机场推荐">12月29日22.4M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-19-clash-v2ray-ss-ssr.htm" title="12月19日19.6M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，代理机场推荐">12月19日19.6M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-3-free-shadowrocket-node.htm" title="12月3日22.8M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，代理机场推荐">12月3日22.8M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-21472.htm" title="动物医院仪器有哪些种类图片（动物医院常见的诊疗设备）">动物医院仪器有哪些种类图片（动物医院常见的诊疗设备）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-28-free-clash.htm" title="1月28日20.4M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐">1月28日20.4M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-27949.htm" title="正确计算linux系统内存使用率">正确计算linux系统内存使用率</a></li>
+                        <li class="py-2"><a href="/news/article-21020.htm" title="Spingboot Resttemplate连接池配置">Spingboot Resttemplate连接池配置</a></li>
                     </ul>
     </div>
 </div>
@@ -119,34 +147,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
