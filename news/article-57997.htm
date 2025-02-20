@@ -108,6 +108,7 @@
                   				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="_0" rel="nofollow"></a>父传子、子传父经典案例—微信小程序自定义标题栏全过程</h2> <p><strong>1.</strong> 先在父组件（页面）的data中放入数组数据<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/30bdfcfd7d9da80ab8b7f1af93feb7d5.jpg" alt="父传子、子传父经典案例—微信小程序自定义标题栏全过程"><br /><strong>2.</strong> 在component文件夹新建组件Tabs<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/527a4964f1466aac255fd2a288d9fe94.jpg" alt="父传子、子传父经典案例—微信小程序自定义标题栏全过程"><br /><strong>3.</strong> 在父组件引入子组件<img decoding="async" src="http://img.555519.xyz/uploads/20230207/88e8201f12f42f7d9aee14fbbfe8e58a.jpg" alt="父传子、子传父经典案例—微信小程序自定义标题栏全过程"></p> <p><strong>4.</strong> 在父组件的wxml中引入子组件标签，此时组件的基操完成，准备进入父传子环节<img decoding="async" src="http://img.555519.xyz/uploads/20230207/28efbd1ce9cca9bfeae662ca3e946d06.jpg" alt="父传子、子传父经典案例—微信小程序自定义标题栏全过程"><br /><strong>5.</strong> 父亲向子组件传递数据靠<strong>属性</strong>，咱们在子组件标签中引入在list属性，值为咱们在data中的list数组<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/fd4665f47b749b1dd05393e35165e82c.jpg" alt="父传子、子传父经典案例—微信小程序自定义标题栏全过程"><br /><strong>6.</strong> 引入属性后不要忘记在子组件js文件中的properties中写清楚引入的属性的类型以及默认值<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/281a4bddc4dff663331e261712e06c49.jpg" alt="父传子、子传父经典案例—微信小程序自定义标题栏全过程"><br /><strong>7.</strong> 此时子组件已经获取父组件的list数据，这时候我们就可以在子组件中操作样式而在父组件（页面）中显示了</p> <p>在子组件wxml中定义标题栏最外层容器存放标题栏和内容<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/ec12914e2e0e0b1fa130b66306bc8abd.jpg" alt="父传子、子传父经典案例—微信小程序自定义标题栏全过程"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/af53f91fa495d939cc5e8c76a0d97440.jpg" alt="父传子、子传父经典案例—微信小程序自定义标题栏全过程"></p> <p><strong>效果：</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/7c6aba9c819ec80030029564716bd5f0.jpg" alt="父传子、子传父经典案例—微信小程序自定义标题栏全过程"><br /> 此时父传子完成，接下来进行子传父步骤.<br /><strong>8.</strong> 我们接下来想完成点击自定义标题，标题发生样式改变的效果，我们之前是在组件中渲染父组件传递过来的数据的，我们在子组件的wxml中绑定点击事件并且定义索引index，当我们点击标题时出发子组件中的自定义点击事件获得当前标题的索引，并用triggerEvent方法，将点击的索引传递给父组件的自定义点击事件，所以此时我们点击标题，父组件有返回值（若不加这个方法，父组件是没有返回值的）<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/89f15a442355a56691f7c1f81e953756.jpg" alt="父传子、子传父经典案例—微信小程序自定义标题栏全过程"><br /> 所以我们可以从父组件返回值中提取索引，并获取父组件data中的list数组，循环所有标题索引，若等于获取到的index，则该索引对应的值的isactive方法值变为true，否则为false<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/238e3328a44cbb0e21e669d32c162a8b.jpg" alt="父传子、子传父经典案例—微信小程序自定义标题栏全过程"><br /><strong>9.</strong> 在子组件wxml中新加active类，若isactive属性为true就添加样式active类<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/2cae647f4244138ab9df51417d800cfb.jpg" alt="父传子、子传父经典案例—微信小程序自定义标题栏全过程"><br /> 在子组件less文件中设置active样式<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/f8e53b57c73c9c25217bf7e4e3a3b137.jpg" alt="父传子、子传父经典案例—微信小程序自定义标题栏全过程"><br /> 此时子传父完成，本案例的子传父，即子组件被点击的标题的index值传递给父组件的自定义方法中，最后父组件的这个自定义方法改变这个索引对应的标题的样式。</p> <p><strong>效果：</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/51dc6440753b4816ed6cd71c022f9cce.jpg" alt="父传子、子传父经典案例—微信小程序自定义标题栏全过程"></p> <p><strong>总结：</strong><br /> 父传子过程通过属性来进行，子传父过程通过triggerEvent（“父组件自定义点击事件”，子组件要传递的值）方法来传值</p> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-57996.htm">我们如何使用单个MySQL UPDATE语句更新多行上的列值？</a></p>
+                                        <p>下一个：<a href="/news/article-58436.htm">南京宠物领养日条件 南京宠物领养日活动</a></p>
                                     </div>
                                             </div>
                         </div>
@@ -120,16 +121,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-40453.htm" title="显卡除了a卡n卡还有什么(哪些显卡是a卡)">显卡除了a卡n卡还有什么(哪些显卡是a卡)</a></li>
-                        <li class="py-2"><a href="/news/article-52488.htm" title="动物打了疫苗了被抓还要***吗（动物打了疫苗了被抓还要***吗视频）">动物打了疫苗了被抓还要***吗（动物打了疫苗了被抓还要***吗视频）</a></li>
-                        <li class="py-2"><a href="/news/article-28880.htm" title="动物疫苗价格表图片及价格查询大全 动物疫苗价格表图片及价格查询大全下载">动物疫苗价格表图片及价格查询大全 动物疫苗价格表图片及价格查询大全下载</a></li>
-                        <li class="py-2"><a href="/news/article-22395.htm" title="宠物粮加盟 宠物粮加盟店">宠物粮加盟 宠物粮加盟店</a></li>
-                        <li class="py-2"><a href="/news/article-32683.htm" title="宠物领养市场现状调查（宠物领养市场现状调查报告）">宠物领养市场现状调查（宠物领养市场现状调查报告）</a></li>
-                        <li class="py-2"><a href="/news/article-35892.htm" title="动物打疫苗多少钱一针?（动物打疫苗多少钱一针）">动物打疫苗多少钱一针?（动物打疫苗多少钱一针）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-26-free-shadowrocket-node.htm" title="11月26日18.7M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接，代理机场推荐">11月26日18.7M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-47866.htm" title="中牧兽用疫苗厂家电话（中牧股份动物疫苗）">中牧兽用疫苗厂家电话（中牧股份动物疫苗）</a></li>
+                        <li class="py-2"><a href="/news/article-27028.htm" title="开宠物店会血本无归吗（开宠物店会血本无归吗）">开宠物店会血本无归吗（开宠物店会血本无归吗）</a></li>
+                        <li class="py-2"><a href="/news/article-53019.htm" title="领养宠物交保证押金合理吗知乎（宠物领养费合法吗）">领养宠物交保证押金合理吗知乎（宠物领养费合法吗）</a></li>
+                        <li class="py-2"><a href="/news/article-30307.htm" title="快速排序Java代码实现">快速排序Java代码实现</a></li>
+                        <li class="py-2"><a href="/news/article-33639.htm" title="福建农林大学动物医学院官网（福建农林大学动物科学学院官网）">福建农林大学动物医学院官网（福建农林大学动物科学学院官网）</a></li>
+                        <li class="py-2"><a href="/news/article-21020.htm" title="Spingboot Resttemplate连接池配置">Spingboot Resttemplate连接池配置</a></li>
+                        <li class="py-2"><a href="/news/article-26103.htm" title="宠物粮食公司排名 宠物粮食公司排名前十">宠物粮食公司排名 宠物粮食公司排名前十</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-16-free-clash-subscribe.htm" title="12月16日21.8M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">12月16日21.8M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-1-11-free-subscribe-node.htm" title="1月11日21.1M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">1月11日21.1M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-2-15-free-clash-subscribe.htm" title="2月15日21.3M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">2月15日21.3M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/news/article-51432.htm" title="开宠物店盈利吗现在多少钱（开宠物店盈利吗现在多少钱啊）">开宠物店盈利吗现在多少钱（开宠物店盈利吗现在多少钱啊）</a></li>
+                        <li class="py-2"><a href="/news/article-20100.htm" title="打过疫苗的动物抓伤要打针吗（打了疫苗的动物用不用打狂犬疫苗）">打过疫苗的动物抓伤要打针吗（打了疫苗的动物用不用打狂犬疫苗）</a></li>
                     </ul>
     </div>
 </div>
@@ -141,7 +142,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
