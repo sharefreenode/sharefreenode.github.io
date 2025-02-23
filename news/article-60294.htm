@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-60294.htm" />
+    <title>Elasticsearch Mapping 中配置自定义Analyzer</title>
+        <meta name="description" content="多字段特性  默认text 类型会有一个keyword 字段类型  什么情况下使用多字段？  公司名字实现精确匹配 使用不同的Analyzer  不同语言 pinyin字段的搜索 还支持为搜索和索引指" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ShareFreeNode节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sharefreenode.github.io/news/article-60294.htm" />
+    <meta property="og:site_name" content="ShareFreeNode节点订阅站" />
+    <meta property="og:title" content="Elasticsearch Mapping 中配置自定义Analyzer" />
+    <meta property="og:image" content="https://sharefreenode.github.io/uploads/20240415/f18262eb83c405b54fe9ad46641c9dcc.webp" />
+        <meta property="og:release_date" content="2025-02-21T09:19:12" />
+    <meta property="og:updated_time" content="2025-02-21T09:19:12" />
+        <meta property="og:description" content="多字段特性  默认text 类型会有一个keyword 字段类型  什么情况下使用多字段？  公司名字实现精确匹配 使用不同的Analyzer  不同语言 pinyin字段的搜索 还支持为搜索和索引指" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Elasticsearch Mapping 中配置自定义Analyzer">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <link href="/assets/website/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+            <a href="/">
+                        Share<span>FreeNode</span>            </a>
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/client.htm">客户端</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>Elasticsearch Mapping 中配置自定义Analyzer</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h3>多字段特性</h3> <blockquote> <p>默认text 类型会有一个keyword 字段类型</p> </blockquote> <h3>什么情况下使用多字段？</h3> <ul> <li>公司名字实现精确匹配</li> <li>使用不同的Analyzer <ul> <li>不同语言</li> <li>pinyin字段的搜索</li> <li>还支持为搜索和索引指定不同的analyzer</li> </ul> </li> </ul> <h3>精确值和全文本</h3> <blockquote> <p>区别：精确值不需要做分词处理</p> </blockquote> <h3>自定义Analyzer 介绍</h3> <ul> <li>Character Filters</li> </ul> <blockquote> <p>在Tokenizer 之前对文本进行处理，例如增加删除及替换字符，可以配置多个Character Filters 。会影响TOkenizer 的position和offset 信息。</p> <p>一些自带的Character Filters</p> <p>HTML strip&nbsp; 去除html 标签</p> <p>Mapping 字符串替换</p> <p>Pattern replace 正则匹配替换</p> </blockquote> <p>示例</p> <pre><code class="language-bash">POST _analyze {   "tokenizer": "keyword",   "char_filter": ["html_strip"],   "text": "&lt;b&gt;hello world&lt;/b&gt;" }  // 使用char filter 进行替换 POST _analyze {   "tokenizer": "standard",   "char_filter": [     {       "type": "mapping",       "mappings": ["- =&gt; _"]     }   ],   "text": "123-456, I-test! test-990 650-555-1234" }  // 替换表情符号 POST _analyze {   "tokenizer": "standard",   "char_filter": [     {       "type": "mapping",       "mappings": [":) =&gt; happy", ":( =&gt; sad"]     }   ],   "text": "my today :) ,but :( !!!" } // 正则表达式 GET _analyze {   "tokenizer": "standard",   "char_filter": [     {       "type": "pattern_replace",       "pattern": "http://(.*)",       "replacement": "$1"     }   ],   "text": "http://www.baidu.com" }</code></pre> <h3> TOkenizer</h3> <blockquote> <p>将原始的文本按照一定的规则，切分为词(term or token)</p> <p>Elasticsearch 内置的Tokenizers</p> <p>whitespace / standard / uax_url_email /pattern /keyword/ path hierarchy</p> <p>可以用java 开发插件，实现自己的Tokenizer</p> </blockquote> <p>示例：</p> <pre><code class="language-bash">// 文件路径切分 POST _analyze {   "tokenizer": "path_hierarchy",   "text": "/usr/local/a/b/c/d/e" }</code></pre> <h3>Token Filters</h3> <blockquote> <p>将Tokenizer 输出的单词(term), 进行增加，修改，删除</p> <p>自带的Token Filters</p> <p>lowercase / stop / synonym （添加近义词）</p> </blockquote> <p>示例</p> <pre><code class="language-bash">// whitespace 与stop 以空格切分，并且去掉in  the on 介词 GET _analyze {   "tokenizer": "whitespace",   "filter": ["stop"],   "text": ["The rain in Spain falls mainly on the plain."] } // whitespace 加入lowercase 后，介词The 改为小写被删除   GET _analyze {   "tokenizer": "whitespace",   "filter": ["lowercase","stop"],   "text": ["The rain in Spain falls mainly on the plain."] }</code></pre> <p> 设置一个自定义Analyzer</p> <pre><code class="language-bash">// 创建索引指定分词器 PUT my_inx {   "settings": {     "analysis": {       "analyzer": {         "my_custom_analyzer": {           "type": "custom",           "char_filter": [             "emoticons"             ],             "tokenizer": "punctuation",             "filter": [               "lowercase",               "english_stop"               ]         }       },       "tokenizer": {         "punctuation": {           "type": "pattern",           "pattern": "[ .,!?]"         }       },       "char_filter": {         "emoticons": {           "type": "mapping",           "mappings": [             ":) =&gt; _happy_",             ":( =&gt; _sad_"             ]         }       },       "filter": {         "english_stop": {           "type": "stop",           "stopwords": "_englist_"         }       }     }   } }  POST my_inx/_analyze {   "analyzer": "my_custom_analyzer",   "text": "I'm a :) persion, and you?" }</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-59716.htm">猫咪到底打不打疫苗（猫打不打疫苗有什么区别）</a></p>
+                                        <p>下一个：<a href="/news/article-60295.htm">全国宠物领养平台可信吗现在（全国宠物领养中心官网）</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-31-node-share-links.htm" title="12月31日18M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">12月31日18M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-9-node-share-links.htm" title="11月9日22.6M/S|Shadowrocket/SSR/V2ray/Clash免费节点每天更新订阅链接，代理机场推荐">11月9日22.6M/S|Shadowrocket/SSR/V2ray/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-9-free-subscribe-node.htm" title="12月9日20.1M/S|Shadowrocket/SSR/V2ray/Clash免费节点每天更新订阅链接，代理机场推荐">12月9日20.1M/S|Shadowrocket/SSR/V2ray/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-22-free-v2ray-subscribe.htm" title="2月22日21.4M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">2月22日21.4M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-58437.htm" title="生产动物疫苗的公司（生产动物疫苗上市公司）">生产动物疫苗的公司（生产动物疫苗上市公司）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-21-free-ssr-subscribe.htm" title="12月21日19.6M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接，代理机场推荐">12月21日19.6M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-55745.htm" title="宠物粮食加工厂设备有哪些厂家的品牌 宠物粮食加工厂设备有哪些厂家的品牌好">宠物粮食加工厂设备有哪些厂家的品牌 宠物粮食加工厂设备有哪些厂家的品牌好</a></li>
+                        <li class="py-2"><a href="/news/article-29337.htm" title="领养狗的好处和坏处（领养狗的好处和坏处有哪些）">领养狗的好处和坏处（领养狗的好处和坏处有哪些）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-free-v2ray-subscribe.htm" title="11月19日21.7M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接，代理机场推荐">11月19日21.7M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-6-free-ssr-subscribe.htm" title="11月6日22.7M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接，代理机场推荐">11月6日22.7M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

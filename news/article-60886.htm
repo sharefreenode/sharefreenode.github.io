@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-60886.htm" />
+    <title>Spring Security 入门：自定义 Filter</title>
+        <meta name="description" content="本文解决问题 将自定义的Filter 加入到 Spring Security 中的Filter 链中的指定位置。 Spring Security 默认的过滤器链 官网位置：http://docs.sp" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ShareFreeNode节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sharefreenode.github.io/news/article-60886.htm" />
+    <meta property="og:site_name" content="ShareFreeNode节点订阅站" />
+    <meta property="og:title" content="Spring Security 入门：自定义 Filter" />
+    <meta property="og:image" content="https://sharefreenode.github.io/uploads/20240415/9b3586eae1d74835964d5f3f4d789636.webp" />
+        <meta property="og:release_date" content="2025-02-22T07:10:45" />
+    <meta property="og:updated_time" content="2025-02-22T07:10:45" />
+        <meta property="og:description" content="本文解决问题 将自定义的Filter 加入到 Spring Security 中的Filter 链中的指定位置。 Spring Security 默认的过滤器链 官网位置：http://docs.sp" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Spring Security 入门：自定义 Filter">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <link href="/assets/website/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+            <a href="/">
+                        Share<span>FreeNode</span>            </a>
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/client.htm">客户端</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>Spring Security 入门：自定义 Filter</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div> <div> <h2>本文解决问题</h2> <p>将自定义的<code>Filter</code> 加入到 Spring Security 中的<code>Filter</code> 链中的指定位置。</p> <h2>Spring Security 默认的过滤器链</h2> <p>官网位置：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://link.jianshu.com?t=http://docs.spring.io/spring-security/site/docs/5.0.0.M1/reference/htmlsingle/#ns-custom-filters"  rel="nofollow">http://docs.spring.io/spring-security/site/docs/5.0.0.M1/reference/htmlsingle/#ns-custom-filters</a></p> <table> <thead> <tr> <th>别名</th> <th>类名称</th> <th>Namespace Element or Attribute</th> </tr> </thead> <tbody> <tr> <td>CHANNEL_FILTER</td> <td>ChannelProcessingFilter</td> <td>http/intercept-url@requires-channel</td> </tr> <tr> <td>SECURITY_CONTEXT_FILTER</td> <td>SecurityContextPersistenceFilter</td> <td>http</td> </tr> <tr> <td>CONCURRENT_SESSION_FILTER</td> <td>ConcurrentSessionFilter</td> <td>session-management/concurrency-control</td> </tr> <tr> <td>HEADERS_FILTER</td> <td>HeaderWriterFilter</td> <td>http/headers</td> </tr> <tr> <td>CSRF_FILTER</td> <td>CsrfFilter</td> <td>http/csrf</td> </tr> <tr> <td>LOGOUT_FILTER</td> <td>LogoutFilter</td> <td>http/logout</td> </tr> <tr> <td>X509_FILTER</td> <td>X509AuthenticationFilter</td> <td>http/x509</td> </tr> <tr> <td>PRE_AUTH_FILTER</td> <td>AbstractPreAuthenticatedProcessingFilter( Subclasses)</td> <td>N/A</td> </tr> <tr> <td>CAS_FILTER</td> <td>CasAuthenticationFilter</td> <td>N/A</td> </tr> <tr> <td>FORM_LOGIN_FILTER</td> <td>UsernamePasswordAuthenticationFilter</td> <td>http/form-login</td> </tr> <tr> <td>BASIC_AUTH_FILTER</td> <td>BasicAuthenticationFilter</td> <td>http/http-basic</td> </tr> <tr> <td>SERVLET_API_SUPPORT_FILTER</td> <td>SecurityContextHolderAwareRequestFilter</td> <td>http/@servlet-api-provision</td> </tr> <tr> <td>JAAS_API_SUPPORT_FILTER</td> <td>JaasApiIntegrationFilter</td> <td>http/@jaas-api-provision</td> </tr> <tr> <td>REMEMBER_ME_FILTER</td> <td>RememberMeAuthenticationFilter</td> <td>http/remember-me</td> </tr> <tr> <td>ANONYMOUS_FILTER</td> <td>AnonymousAuthenticationFilter</td> <td>http/anonymous</td> </tr> <tr> <td>SESSION_MANAGEMENT_FILTER</td> <td>SessionManagementFilter</td> <td>session-management</td> </tr> <tr> <td>EXCEPTION_TRANSLATION_FILTER</td> <td>ExceptionTranslationFilter</td> <td>http</td> </tr> <tr> <td>FILTER_SECURITY_INTERCEPTOR</td> <td>FilterSecurityInterceptor</td> <td>http</td> </tr> <tr> <td>SWITCH_USER_FILTER</td> <td>SwitchUserFilter</td> <td>N/A</td> </tr> </tbody> </table> <blockquote> <p>过滤器顺序从上到下</p> </blockquote> <h2>自定义 Filter</h2> <p>自定义的<code>Filter</code> 建议继承<code>GenericFilterBean</code>，本文示例：</p> <pre><code class="language-java"><code class="java"><span class="hljs-keyword">public</span><span class="hljs-class"><span class="hljs-keyword">class</span><span class="hljs-title">BeforeLoginFilter</span><span class="hljs-keyword">extends</span><span class="hljs-title">GenericFilterBean</span></span>{<span class="hljs-meta">@Override</span><span class="hljs-function"><span class="hljs-keyword">public</span><span class="hljs-keyword">void</span><span class="hljs-title">doFilter</span><span class="hljs-params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span><span class="hljs-keyword">throws</span> IOException, ServletException</span>{         System.out.println(<span class="hljs-string">"This is a filter before UsernamePasswordAuthenticationFilter."</span>);<span class="hljs-comment">// 继续调用 Filter 链</span>         filterChain.doFilter(servletRequest, servletResponse);     } }</code></code></pre> <h2>配置自定义 Filter 在 Spring Security 过滤器链中的位置</h2> <p>配置很简单，本文示例：</p> <pre><code class="language-cpp"><code class="cpp"><span class="hljs-function"><span class="hljs-keyword">protected</span><span class="hljs-keyword">void</span><span class="hljs-title">configure</span><span class="hljs-params">(HttpSecurity http)</span> throws Exception</span>{         http                 .authorizeRequests()                 .antMatchers(<span class="hljs-string">"/"</span>).permitAll()                 .antMatchers(<span class="hljs-string">"/user/**"</span>).hasRole(<span class="hljs-string">"USER"</span>)                 .<span class="hljs-keyword">and</span>()                 .formLogin().loginPage(<span class="hljs-string">"/login"</span>).defaultSuccessUrl(<span class="hljs-string">"/user"</span>)                 .<span class="hljs-keyword">and</span>()                 .logout().logoutUrl(<span class="hljs-string">"/logout"</span>).logoutSuccessUrl(<span class="hljs-string">"/login"</span>);<span class="hljs-comment">// 在 UsernamePasswordAuthenticationFilter 前添加 BeforeLoginFilter</span>         http.addFilterBefore(<span class="hljs-keyword">new</span> BeforeLoginFilter(), UsernamePasswordAuthenticationFilter.class);<span class="hljs-comment">// 在 CsrfFilter 后添加 AfterCsrfFilter</span>         http.addFilterAfter(<span class="hljs-keyword">new</span> AfterCsrfFilter(), CsrfFilter.class);     }</code></code></pre> <p>说明：<br /><code>HttpSecurity</code> 有三个常用方法来配置：</p> <ul> <li>addFilterBefore(Filter filter, Class&lt;? extends Filter&gt; beforeFilter)<br />在 beforeFilter 之前添加 filter</li> <li>addFilterAfter(Filter filter, Class&lt;? extends Filter&gt; afterFilter)<br />在 afterFilter 之后添加 filter</li> <li>addFilterAt(Filter filter, Class&lt;? extends Filter&gt; atFilter)<br />在 atFilter 相同位置添加 filter， 此 filter 不覆盖 filter</li> </ul> <blockquote> <p>通过在不同<code>Filter</code> 的<code>doFilter()</code> 方法中加断点调试，可以判断哪个 filter 先执行，从而判断 filter 的执行顺序 。</p> </blockquote> </div> <p>作者：Anoyi<br />链接：https://www.jianshu.com/p/deb512b41f99<br />來源：简书<br />著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-60885.htm">Kafka群起时报错：kafka-run-class.sh: line 258: exec: java: not found的解决办法</a></p>
+                                        <p>下一个：<a href="/news/article-61471.htm">新手开网店适合开什么店（拼多多网店能挣钱吗）</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-18-free-clash.htm" title="12月18日18.9M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">12月18日18.9M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-19185.htm" title="Go 语言接口及使用接口实现链表插入">Go 语言接口及使用接口实现链表插入</a></li>
+                        <li class="py-2"><a href="/news/article-51433.htm" title="私人写的协议书签字有效吗（私人写的协议书签字有效吗安全吗）">私人写的协议书签字有效吗（私人写的协议书签字有效吗安全吗）</a></li>
+                        <li class="py-2"><a href="/news/article-39945.htm" title="VUE实现某区域中拖拽效果">VUE实现某区域中拖拽效果</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-21-free-ssr-subscribe.htm" title="12月21日19.6M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接，代理机场推荐">12月21日19.6M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-57424.htm" title="@Valid 参数校验不生效问题解决">@Valid 参数校验不生效问题解决</a></li>
+                        <li class="py-2"><a href="/news/article-20560.htm" title="【LINT】cpplint修改版：自定义编码风格检查工具lint_在线工具">【LINT】cpplint修改版：自定义编码风格检查工具lint_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-27949.htm" title="正确计算linux系统内存使用率">正确计算linux系统内存使用率</a></li>
+                        <li class="py-2"><a href="/news/article-53565.htm" title="动物医院工作时间（动物医院工作时间安排）">动物医院工作时间（动物医院工作时间安排）</a></li>
+                        <li class="py-2"><a href="/news/article-31200.htm" title="c# Semaphore（信号量）">c# Semaphore（信号量）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
