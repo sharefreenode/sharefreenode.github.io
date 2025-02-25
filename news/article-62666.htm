@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-62666.htm" />
+    <title>数据库时间问题</title>
+        <meta name="description" content="1. 代码产生时间和数据库存储的时间不一致性问题  2.1 核对linux服务器时区 date -R   +0800即东8区，没问题    2.2 核对mysql时区 show variables l" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ShareFreeNode节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sharefreenode.github.io/news/article-62666.htm" />
+    <meta property="og:site_name" content="ShareFreeNode节点订阅站" />
+    <meta property="og:title" content="数据库时间问题" />
+    <meta property="og:image" content="https://sharefreenode.github.io/uploads/20240415/beee6738bebb25e416a6d8e1a2606520.webp" />
+        <meta property="og:release_date" content="2025-02-25T04:59:17" />
+    <meta property="og:updated_time" content="2025-02-25T04:59:17" />
+        <meta property="og:description" content="1. 代码产生时间和数据库存储的时间不一致性问题  2.1 核对linux服务器时区 date -R   +0800即东8区，没问题    2.2 核对mysql时区 show variables l" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="数据库时间问题">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <link href="/assets/website/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+            <a href="/">
+                        Share<span>FreeNode</span>            </a>
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/client.htm">客户端</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>数据库时间问题</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h4> <a id="1__0" rel="nofollow"></a>1. 代码产生时间和数据库存储的时间不一致性问题</h4> <h5> <a id="21_linux_1" rel="nofollow"></a>2.1 核对linux服务器时区</h5> <pre><code class="prism language-bash"><span class="token function">date</span> <span class="token parameter variable">-R</span> </code></pre> <blockquote> <p>+0800即东8区，没问题</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230208/2cf40fabbb471c51203ea0e70e4c090e.jpg" alt="数据库时间问题"></p> <h5> <a id="22_mysql_8" rel="nofollow"></a>2.2 核对mysql时区</h5> <pre><code class="prism language-bash">show variables like <span class="token string">'%time_zone%'</span> </code></pre> <p>跟随系统，系统也是东八区<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230208/dfda2699194809e76133c85cb0bab222.jpg" alt="数据库时间问题"></p> <h5> <a id="23_applicationymlmysqlAsiaShanghai_14" rel="nofollow"></a>2.3 检查application.yml中mysql连接时区是不是Asia/Shanghai</h5> <pre><code class="prism language-yml">serverTimezone=Asia/Shanghai </code></pre> <h5> <a id="_18" rel="nofollow"></a>至此，问题应该会解决</h5> <h4> <a id="2_20" rel="nofollow"></a>2.数据库时间和查询出来的时间不一致问题解决</h4> <blockquote> <p>如果按照 1 中的做法，都完成了检查，但是返回给前端展示的数据，显示数据与数据库数据不一致。</p> </blockquote> <h5> <a id="_24" rel="nofollow"></a>解决方法如下：给时间加上时区限制</h5> <pre><code class="prism language-java"><span class="token annotation punctuation">@JsonFormat</span><span class="token punctuation">(</span>pattern <span class="token operator">=</span> <span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">,</span> timezone <span class="token operator">=</span> <span class="token string">"Asia/Shanghai"</span><span class="token punctuation">)</span> <span class="token keyword">private</span> <span class="token class-name">Date</span> createTime<span class="token punctuation">;</span> <span class="token annotation punctuation">@JsonFormat</span><span class="token punctuation">(</span>pattern <span class="token operator">=</span> <span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">,</span> timezone <span class="token operator">=</span> <span class="token string">"Asia/Shanghai"</span><span class="token punctuation">)</span> <span class="token keyword">private</span> <span class="token class-name">Date</span> updateTime<span class="token punctuation">;</span> </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230208/1651e8554d85099a8e8314e1e2be23a0.jpg" alt="数据库时间问题"></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-62067.htm">狗粮品牌排名前十名（狗粮10大品牌）</a></p>
+                                        <p>下一个：<a href="/news/article-62667.htm">C语言算法进阶——递归</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-56869.htm" title="让猫挠出血了用打疫苗吗（让猫挠了出了一点血有事吗）">让猫挠出血了用打疫苗吗（让猫挠了出了一点血有事吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-free-clash.htm" title="11月12日21.3M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接，代理机场推荐">11月12日21.3M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-43902.htm" title="中国动物疫苗十强上市公司有几家 国内动物疫苗上市公司">中国动物疫苗十强上市公司有几家 国内动物疫苗上市公司</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-5-free-subscribe-node.htm" title="2月5日22.8M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐">2月5日22.8M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-29-node-share-links.htm" title="12月29日22.4M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新订阅链接，代理机场推荐">12月29日22.4M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-24-free-high-speed-nodes.htm" title="12月24日18.4M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">12月24日18.4M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-14-free-clash-subscribe.htm" title="2月14日19.8M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">2月14日19.8M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-58436.htm" title="南京宠物领养日条件 南京宠物领养日活动">南京宠物领养日条件 南京宠物领养日活动</a></li>
+                        <li class="py-2"><a href="/news/article-35421.htm" title="【mq】从零开始实现 mq-04-启动检测与实现优化_在线工具">【mq】从零开始实现 mq-04-启动检测与实现优化_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-26566.htm" title="养猫需要打哪些疫苗多少钱（养猫需要打预防针吗,多长时间打一次?）">养猫需要打哪些疫苗多少钱（养猫需要打预防针吗,多长时间打一次?）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
