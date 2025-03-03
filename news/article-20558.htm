@@ -71,22 +71,17 @@
 <header id="header">
     <div class="container">
         <div id="logo" class="pull-left">
-                        <a href="/" class="scrollto">Share<span>FreeNode</span></a>
-                        <!-- <a href="#body"><img src="/assets/addons/xcblog/img/sharefreenode/logo.png" alt="" title="" /></a>-->
+            <a href="/">
+                        Share<span>FreeNode</span>            </a>
         </div>
         <nav id="nav-menu-container">
             <ul class="nav-menu">
                                 <li><a href="/">首页</a></li>
                                 <li><a href="/free-nodes/">免费节点</a></li>
                                 <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/client.htm">客户端</a></li>
                                 <li><a href="/news/">新闻资讯</a></li>
-                                <li>
-                    <a href="#">关于</a>
-                </li>
-                <li>
-                    <a href="#">联系</a>
-                </li>
-            </ul>
+                            </ul>
         </nav><!-- #nav-menu-container -->
     </div>
 </header><!-- #header -->
@@ -112,7 +107,6 @@
                                                 <input type="hidden" id="share-website-info" data-name="" data-url="">
                   				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <blockquote> <p>本文基于spring boot 2.2.0 release版本。</p> </blockquote> <p>在上一篇文章《<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_38308374/article/details/114273724"  rel="nofollow">spring boot Actuator原理详解之启动</a>》详细介绍了在web环境下，Actuator是如何启动的，这里对流程做一个简单的总结：</p> <ol> <li>扫描所有@Endpoint注解的类，这些类都是Endpoint；</li> <li>使用过滤器对Endpoint对象进行过滤，没有被过滤掉的才可以进入下一步；</li> <li>读取Endpoint对象的每个方法，判断是否有@ReadOperation、@WriteOperation、@DeleteOperation三个注解，如果有，则针对每个被注解的方法创建操作对象Operation；</li> <li>根据操作对象、Endpoint对象、Endpoint名创建为RequestMappingInfo，并将其注册到spring mvc中；</li> <li>注册成功之后，Endpoint对象便可以对外提供服务。</li> </ol> <p>明白了上面整个启动流程之后，我们也可以编写一个自定义的Endpoint。<br /> 自定义Endpoint的关键点：</p> <ol> <li>类上必须有注解@Endpoint，注解必须设置id值，否则启动抛出如下异常：<code>Caused by: java.lang.IllegalStateException: No @Endpoint id attribute specified for XXXClass</code>；</li> <li>必须指定方法注解为下面三个中一个：<code>@ReadOperation、@WriteOperation、@DeleteOperation</code>；</li> <li>注解@Selector可以指定路径参数，比如<code>/actuator/caches/{cache}</code>花括号里面的内容是路径参数，我们可以在方法入参上添加@Selector来指定路径参数，比如<code>public String counters(@Selector int value)</code>；</li> <li>默认Endpoint对象的方法都是以json格式返回客户端，可以通过设置<code>@ReadOperation、@WriteOperation、@DeleteOperation</code>的produces属性指定其他格式。</li> </ol> <p>下面给出一个自定义Endpoint的例子：</p> <pre><code class="prism language-java"><span class="token comment">/**  * 统计方法该Endpoint对象的次数  */</span> <span class="token annotation punctuation">@Component</span> <span class="token annotation punctuation">@Endpoint</span><span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">"counter"</span><span class="token punctuation">)</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Counter</span>  <span class="token punctuation">{<!-- --></span>     <span class="token keyword">private</span> AtomicInteger cnt<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">AtomicInteger</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token annotation punctuation">@ReadOperation</span>     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">counter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token keyword">return</span> cnt<span class="token punctuation">.</span><span class="token function">getAndAdd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>     <span class="token annotation punctuation">@ReadOperation</span>     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">counters</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Selector</span> <span class="token keyword">int</span> value<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token keyword">return</span> cnt<span class="token punctuation">.</span><span class="token function">getAndAdd</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <p>上面这个类只是一个示例，并没有实际意义。运行起来后，访问<code>http://localhost:8079/actuator/counter</code>，每次访问都会返回一个比之前大1的数字。</p> <p>我们还可以使用注解@EndpointWebExtension扩展已有的Endpoint。<br /> 下面是spring提供的对EnvironmentEndpoint的扩展：</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@EndpointWebExtension</span><span class="token punctuation">(</span>endpoint <span class="token operator">=</span> EnvironmentEndpoint<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">EnvironmentEndpointWebExtension</span> <span class="token punctuation">{<!-- --></span> 	<span class="token keyword">private</span> <span class="token keyword">final</span> EnvironmentEndpoint delegate<span class="token punctuation">;</span> 	<span class="token keyword">public</span> <span class="token function">EnvironmentEndpointWebExtension</span><span class="token punctuation">(</span>EnvironmentEndpoint delegate<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 		<span class="token keyword">this</span><span class="token punctuation">.</span>delegate <span class="token operator">=</span> delegate<span class="token punctuation">;</span> 	<span class="token punctuation">}</span>  	<span class="token annotation punctuation">@ReadOperation</span> 	<span class="token keyword">public</span> WebEndpointResponse<span class="token generics function"><span class="token punctuation">&lt;</span>EnvironmentEntryDescriptor<span class="token punctuation">&gt;</span></span> <span class="token function">environmentEntry</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Selector</span> String toMatch<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 		EnvironmentEntryDescriptor descriptor <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>delegate<span class="token punctuation">.</span><span class="token function">environmentEntry</span><span class="token punctuation">(</span>toMatch<span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">WebEndpointResponse</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>descriptor<span class="token punctuation">,</span> <span class="token function">getStatus</span><span class="token punctuation">(</span>descriptor<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token punctuation">}</span>  	<span class="token keyword">private</span> <span class="token keyword">int</span> <span class="token function">getStatus</span><span class="token punctuation">(</span>EnvironmentEntryDescriptor descriptor<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 		<span class="token keyword">if</span> <span class="token punctuation">(</span>descriptor<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 			<span class="token keyword">return</span> WebEndpointResponse<span class="token punctuation">.</span>STATUS_NOT_FOUND<span class="token punctuation">;</span> 		<span class="token punctuation">}</span> 		<span class="token keyword">return</span> WebEndpointResponse<span class="token punctuation">.</span>STATUS_OK<span class="token punctuation">;</span> 	<span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <p>就web环境下来说，如果扩展类的方法有与原类相同的http请求路径，那么扩展类会替换掉原来的方法，也就是说，访问该路径时，不会访问到原类的方法，而是访问到扩展类。</p> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-20102.htm">动物医院实践心得2500字内容（动物医院实训总结）</a></p>
                                         <p>下一个：<a href="/news/article-20560.htm">【LINT】cpplint修改版：自定义编码风格检查工具lint_在线工具</a></p>
                                     </div>
                                             </div>
@@ -126,16 +120,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-22853.htm" title="动物疫苗的发展现状分析（动物疫苗的发展现状分析）">动物疫苗的发展现状分析（动物疫苗的发展现状分析）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-28-free-clash.htm" title="1月28日20.4M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐">1月28日20.4M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/news/article-40935.htm" title="宠物粮行业分析报告范文（宠物粮食市场前景）">宠物粮行业分析报告范文（宠物粮食市场前景）</a></li>
-                        <li class="py-2"><a href="/news/article-46883.htm" title="动物疫苗间隔多久打一次比较好（动物疫苗多长时间打一次）">动物疫苗间隔多久打一次比较好（动物疫苗多长时间打一次）</a></li>
-                        <li class="py-2"><a href="/news/article-19644.htm" title="开宠物店需要什么手续和证件（开宠物店需要什么手续和证件流程）">开宠物店需要什么手续和证件（开宠物店需要什么手续和证件流程）</a></li>
-                        <li class="py-2"><a href="/news/article-27949.htm" title="正确计算linux系统内存使用率">正确计算linux系统内存使用率</a></li>
-                        <li class="py-2"><a href="/news/article-27026.htm" title="牛羊兽药批发网（牛羊兽药做的最好的公司）">牛羊兽药批发网（牛羊兽药做的最好的公司）</a></li>
-                        <li class="py-2"><a href="/news/article-21472.htm" title="动物医院仪器有哪些种类图片（动物医院常见的诊疗设备）">动物医院仪器有哪些种类图片（动物医院常见的诊疗设备）</a></li>
-                        <li class="py-2"><a href="/news/article-26565.htm" title="dell bios ssd启动 戴尔bios设置ssd启动">dell bios ssd启动 戴尔bios设置ssd启动</a></li>
-                        <li class="py-2"><a href="/news/article-35892.htm" title="动物打疫苗多少钱一针?（动物打疫苗多少钱一针）">动物打疫苗多少钱一针?（动物打疫苗多少钱一针）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-free-high-speed-nodes.htm" title="1月7日18.6M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">1月7日18.6M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-7-free-node-subscribe.htm" title="2月7日18M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新订阅链接，代理机场推荐">2月7日18M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-10-node-share-links.htm" title="12月10日22.5M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，代理机场推荐">12月10日22.5M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-65109.htm" title="刚开的宠物店生意不好怎么办（刚开的宠物店生意不好怎么办呀）">刚开的宠物店生意不好怎么办（刚开的宠物店生意不好怎么办呀）</a></li>
+                        <li class="py-2"><a href="/news/article-44423.htm" title="猪疫苗时间表（猪疫苗大全）">猪疫苗时间表（猪疫苗大全）</a></li>
+                        <li class="py-2"><a href="/news/article-23768.htm" title="动物疫苗一针多少钱啊图片视频大全（动物疫苗一针多少钱啊图片视频大全大图）">动物疫苗一针多少钱啊图片视频大全（动物疫苗一针多少钱啊图片视频大全大图）</a></li>
+                        <li class="py-2"><a href="/news/article-38467.htm" title="SpringBoot打包所有依赖jar包和配置文件全部分离">SpringBoot打包所有依赖jar包和配置文件全部分离</a></li>
+                        <li class="py-2"><a href="/news/article-33639.htm" title="福建农林大学动物医学院官网（福建农林大学动物科学学院官网）">福建农林大学动物医学院官网（福建农林大学动物科学学院官网）</a></li>
+                        <li class="py-2"><a href="/news/article-32204.htm" title="领养回访多久可以结束 领养回访多久可以结束呢">领养回访多久可以结束 领养回访多久可以结束呢</a></li>
+                        <li class="py-2"><a href="/news/article-36503.htm" title="宠物领养活动宣传语（宠物领养活动方案）">宠物领养活动宣传语（宠物领养活动方案）</a></li>
                     </ul>
     </div>
 </div>
@@ -147,16 +141,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                     </ul>
     </div>
