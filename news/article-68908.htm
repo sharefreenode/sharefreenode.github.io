@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-68908.htm" />
+    <title>React18之状态批处理的使用_React</title>
+        <meta name="description" content="目录  状态自动批处理 17版  18版  退出状态自动批处理  要点概述   react在3月29号正式发布了18版本, 此次更新包括: 状态自动批处理, 客户端渲染api的更新, 新的hook等很" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ShareFreeNode节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sharefreenode.github.io/news/article-68908.htm" />
+    <meta property="og:site_name" content="ShareFreeNode节点订阅站" />
+    <meta property="og:title" content="React18之状态批处理的使用_React" />
+    <meta property="og:image" content="https://sharefreenode.github.io/uploads/20240415/f492b3fca11fe03800501a686779f5f4.webp" />
+        <meta property="og:release_date" content="2025-03-07T06:35:18" />
+    <meta property="og:updated_time" content="2025-03-07T06:35:18" />
+        <meta property="og:description" content="目录  状态自动批处理 17版  18版  退出状态自动批处理  要点概述   react在3月29号正式发布了18版本, 此次更新包括: 状态自动批处理, 客户端渲染api的更新, 新的hook等很" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="React18之状态批处理的使用_React">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <link href="/assets/website/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+            <a href="/">
+                        Share<span>FreeNode</span>            </a>
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/client.htm">客户端</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>React18之状态批处理的使用_React</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">状态自动批处理</a></li> <li><a href="#_label1" rel="nofollow">17版</a></li> <li><a href="#_label2" rel="nofollow"> 18版</a></li> <li><a href="#_label3" rel="nofollow"> 退出状态自动批处理</a></li> <li><a href="#_label4" rel="nofollow"> 要点概述</a></li> </ul> </div> <p>react在3月29号正式发布了18版本, 此次更新包括: 状态自动批处理, 客户端渲染api的更新, 新的hook等很多变化, 本章先说一下状态批处理的变化.</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://reactjs.org/blog/2022/03/29/react-v18.html"   target="_blank" rel="nofollow">React v18.0 – React Blog</a></p> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>状态自动批处理</h2> <blockquote> <p>18版本之前, 在合成事件之外的原生事件中(例如 setTimeout, onclick, promise) , 更新状态并不会进行批量处理(合并), 这意味着在原生事件中多次调用状态更新会造成多次应用的重新渲染, 往往我们只需要最后一次即可, react在18版本后优化了这个问题</p> </blockquote> <div class="ay1code"> <pre class="brush:js;">import { useState } from 'react'     function App() {    const [num1, setNum1] = useState(1)    const [num2, setNum2] = useState(1)    const add = () =&gt; {      setTimeout(() =&gt; {        setNum1((pre) =&gt; pre + 1)        setNum2((pre) =&gt; pre + 1)      })    }    console.log('渲染了')    return (      &lt;div className="App"&gt;        &lt;header className="App-header"&gt;react 18&lt;/header&gt;        &lt;p&gt;num1 : {num1}&lt;/p&gt;        &lt;p&gt;num2 : {num2}&lt;/p&gt;        &lt;button onClick={add}&gt;+1&lt;/button&gt;      &lt;/div&gt;    )  }     export default App</pre> </div> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>17版</h2> <p>点击四下后,组件渲染了8次</p> <p style="text-align:center"><img fetchpriority="high" decoding="async" alt="" height="326" src="http://img.555519.xyz/uploads3/20220504/fb5ac915bfa3d62316d47ad1342067c4.jpg"></p> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2> 18版</h2> <p>点击4下后, 组件渲染了4次</p> <p style="text-align:center"><img decoding="async" alt="" height="248" src="http://img.555519.xyz/uploads3/20220504/8c1329b3edd8addbac557061fc8e827a.jpg"></p> <p class="maodian"><a name="_label3" rel="nofollow"></a></p> <h2> 退出状态自动批处理</h2> <blockquote> <p>在某些场景下 我们可能不需要批处理状态更新, 此时我们需要用到 react-dom 提供的flushSync函数, 该函数需传入一个回调, 并且会同步刷新回调中的状态更新</p> </blockquote> <div class="ay1code"> <pre class="brush:js;">import { useState } from 'react'  import { flushSync } from 'react-dom'     function App() {    const [num1, setNum1] = useState(1)    const [num2, setNum2] = useState(1)    const add = () =&gt; {      setTimeout(() =&gt; {        flushSync(() =&gt; {          setNum1((pre) =&gt; pre + 1)        })        flushSync(() =&gt; {          setNum2((pre) =&gt; pre + 1)        })      })    }    console.log('渲染了')    console.log(num1, num2)    return (      &lt;div className="App"&gt;        &lt;header className="App-header"&gt;react 18&lt;/header&gt;        &lt;p&gt;num1 : {num1}&lt;/p&gt;        &lt;p&gt;num2 : {num2}&lt;/p&gt;        &lt;button onClick={add}&gt;+1&lt;/button&gt;      &lt;/div&gt;    )  }     export default App</pre> </div> <p style="text-align:center"><img decoding="async" alt="" height="289" src="http://img.555519.xyz/uploads3/20220504/68629dd32aafa79675ec8d459a1ec50f.jpg"></p> <p class="maodian"><a name="_label4" rel="nofollow"></a></p> <h2> 要点概述</h2> <blockquote> <p>1. 原生事件内状态更新改为批量处理</p> <p>2. 不需要批量处理时 使用 react-dom 提供的flushSync函数, 此函数同步刷新参数回调内的状态更新</p> </blockquote> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-68243.htm">小型宠物粮食加工设备有哪些品牌的（宠物粮加工机器）</a></p>
+                                        <p>下一个：<a href="/news/article-68909.htm">动物医院有哪些助理岗位职责（动物医院医生助理工作描述）</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-42920.htm" title="动物医院名字大全集最新版英文（动物医院名字大全集最新版英文）">动物医院名字大全集最新版英文（动物医院名字大全集最新版英文）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-25-free-v2ray-subscribe.htm" title="2月25日20.6M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接，代理机场推荐">2月25日20.6M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-41921.htm" title="美国手机品牌排名(美国手机十大名牌)">美国手机品牌排名(美国手机十大名牌)</a></li>
+                        <li class="py-2"><a href="/news/article-59125.htm" title="动物疫苗价格表图片高清大图下载（动物疫苗的使用方法及注意事项）">动物疫苗价格表图片高清大图下载（动物疫苗的使用方法及注意事项）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-5-free-clash.htm" title="1月5日19.9M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接，代理机场推荐">1月5日19.9M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-51433.htm" title="私人写的协议书签字有效吗（私人写的协议书签字有效吗安全吗）">私人写的协议书签字有效吗（私人写的协议书签字有效吗安全吗）</a></li>
+                        <li class="py-2"><a href="/news/article-60886.htm" title="Spring Security 入门：自定义 Filter">Spring Security 入门：自定义 Filter</a></li>
+                        <li class="py-2"><a href="/news/article-40936.htm" title="1970年阴历四月二十七是什么星座女孩（1970年阴历四月二十七是什么星座女孩命运）">1970年阴历四月二十七是什么星座女孩（1970年阴历四月二十七是什么星座女孩命运）</a></li>
+                        <li class="py-2"><a href="/news/article-55204.htm" title="动物医院价格表图片大全集高清（动物医院价格表图片大全集高清版）">动物医院价格表图片大全集高清（动物医院价格表图片大全集高清版）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-15-free-clash-subscribe.htm" title="2月15日21.3M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">2月15日21.3M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
