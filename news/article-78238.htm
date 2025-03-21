@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-78238.htm" />
+    <title>使用maven命令直接打包war项目</title>
+        <meta name="description" content="当你本地系统已经配置好了maven的变量，可以直接使用maven命令直接打包一个项目 首先使用cmd进入对应项目的位置 输入对应命令 mvn package -Dmaven.skip.test=tru" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ShareFreeNode节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sharefreenode.github.io/news/article-78238.htm" />
+    <meta property="og:site_name" content="ShareFreeNode节点订阅站" />
+    <meta property="og:title" content="使用maven命令直接打包war项目" />
+    <meta property="og:image" content="https://sharefreenode.github.io/uploads/20240415/89c38bad102fbafa8dd31d1fe06586bd.webp" />
+        <meta property="og:release_date" content="2025-03-21T10:29:41" />
+    <meta property="og:updated_time" content="2025-03-21T10:29:41" />
+        <meta property="og:description" content="当你本地系统已经配置好了maven的变量，可以直接使用maven命令直接打包一个项目 首先使用cmd进入对应项目的位置 输入对应命令 mvn package -Dmaven.skip.test=tru" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="使用maven命令直接打包war项目">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <link href="/assets/website/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+            <a href="/">
+                        Share<span>FreeNode</span>            </a>
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/client.htm">客户端</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>使用maven命令直接打包war项目</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>当你本地系统已经配置好了maven的变量，可以直接使用maven命令直接打包一个项目</p> <p>首先使用cmd进入对应项目的位置</p> <p>输入对应命令</p> <p><span style="color:#1e1c11;"><span style="color:#1e1c11;">mvn package -Dmaven.skip.test=true</span></span></p> <p style="margin-left:0pt;">后面的 Dmaven.skip.tes（跳试）是否进入测试 trun不进入测试</p> <p style="margin-left:0pt;"><img fetchpriority="high" decoding="async" alt="" class="has" height="183" src="http://img.555519.xyz/uploads3/20220608/260f70ae29e91b7e87ee0158bb712a5f.jpg"></p> <p style="margin-left:0pt;">出现这样就是成功了</p> <p style="margin-left:0pt;"><img decoding="async" alt="" class="has" height="322" src="http://img.555519.xyz/uploads3/20220608/ef567f5ff48e8149f61f04f9db43ca11.jpg"></p> <p style="margin-left:0pt;">war包也在对应的地方出现了</p> <p style="margin-left:0pt;"> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-78237.htm">vue3.0中对mapState,mapGetters封装</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-29-node-share-links.htm" title="1月29日20.5M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接，代理机场推荐">1月29日20.5M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-node-share.htm" title="3月2日20.1M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接，代理机场推荐">3月2日20.1M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-65108.htm" title="宠物医院好评评语200字 给宠物医院好评怎么写">宠物医院好评评语200字 给宠物医院好评怎么写</a></li>
+                        <li class="py-2"><a href="/news/article-57997.htm" title="父传子、子传父经典案例—微信小程序自定义标题栏全过程">父传子、子传父经典案例—微信小程序自定义标题栏全过程</a></li>
+                        <li class="py-2"><a href="/news/article-56312.htm" title="信号量 Semaphore的使用">信号量 Semaphore的使用</a></li>
+                        <li class="py-2"><a href="/news/article-38974.htm" title="天津宠物领养中心官网招聘 天津宠物领养中心官网招聘信息">天津宠物领养中心官网招聘 天津宠物领养中心官网招聘信息</a></li>
+                        <li class="py-2"><a href="/news/article-64477.htm" title="动物医院无限金币不减反增（动物医院无限金币版）">动物医院无限金币不减反增（动物医院无限金币版）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-free-subscribe-node.htm" title="3月8日22.8M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">3月8日22.8M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-71512.htm" title="芜湖宠物寄养（芜湖宠物寄养价目表）">芜湖宠物寄养（芜湖宠物寄养价目表）</a></li>
+                        <li class="py-2"><a href="/news/article-59124.htm" title="Apache Tomcat如何高并发处理请求">Apache Tomcat如何高并发处理请求</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

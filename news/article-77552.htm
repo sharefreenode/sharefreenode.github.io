@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-77552.htm" />
+    <title>在Vue中mock假数据</title>
+        <meta name="description" content="在根目录中创建 mock 文件夹，在该文件夹下写 mock 数据，可以分模块书写，比如现在有两个模块的 mock 数据： 模块1（num.js）： module.exports = app =&gt;" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ShareFreeNode节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sharefreenode.github.io/news/article-77552.htm" />
+    <meta property="og:site_name" content="ShareFreeNode节点订阅站" />
+    <meta property="og:title" content="在Vue中mock假数据" />
+    <meta property="og:image" content="https://sharefreenode.github.io/uploads/20240415/67da91ed39f9c4aeaa36019d3feb2f9a.webp" />
+        <meta property="og:release_date" content="2025-03-20T10:00:39" />
+    <meta property="og:updated_time" content="2025-03-20T10:00:39" />
+        <meta property="og:description" content="在根目录中创建 mock 文件夹，在该文件夹下写 mock 数据，可以分模块书写，比如现在有两个模块的 mock 数据： 模块1（num.js）： module.exports = app =&gt;" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="在Vue中mock假数据">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <link href="/assets/website/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+            <a href="/">
+                        Share<span>FreeNode</span>            </a>
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/client.htm">客户端</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>在Vue中mock假数据</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-github-gist"> <p>在根目录中创建 mock 文件夹，在该文件夹下写 mock 数据，可以分模块书写，比如现在有两个模块的 mock 数据：</p> <p>模块1（num.js）：</p> <pre><code class="prism language-js">module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token parameter">app</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{<!-- --></span>   app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/api/setNum'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{<!-- --></span>     res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>       <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>       <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'ok'</span><span class="token punctuation">,</span>       <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>         <span class="token literal-property property">num</span><span class="token operator">:</span> <span class="token number">2</span>       <span class="token punctuation">}</span>     <span class="token punctuation">}</span><span class="token punctuation">)</span>   <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> </code></pre> <p>模块2（news.js）:</p> <pre><code class="prism language-js">module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token parameter">app</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{<!-- --></span>   app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/api/news'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{<!-- --></span>     res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>       <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>       <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'ok'</span><span class="token punctuation">,</span>       <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span>         <span class="token punctuation">{<!-- --></span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'新闻1'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>         <span class="token punctuation">{<!-- --></span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'新闻2'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>         <span class="token punctuation">{<!-- --></span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">3000</span><span class="token punctuation">,</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'新闻3'</span> <span class="token punctuation">}</span>       <span class="token punctuation">]</span>     <span class="token punctuation">}</span><span class="token punctuation">)</span>   <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> </code></pre> <p>在根目录下的 vue.config.js 文件中，将 mock 文件夹下的文件导入：</p> <pre><code class="prism language-js"><span class="token comment">// vue提供给我们来对于已有的webpack配置进行增量修改</span> <span class="token comment">// 此文件的修改，一定要重启项目</span> <span class="token keyword">const</span> <span class="token punctuation">{<!-- --></span> defineConfig <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@vue/cli-service'</span><span class="token punctuation">)</span> <span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span> <span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span>  <span class="token comment">// 自动导入</span> <span class="token keyword">const</span> dirs <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readdirSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'mock'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">const</span> mocks <span class="token operator">=</span> dirs<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">dir</span> <span class="token operator">=&gt;</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">./mock/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${<!-- --></span>dir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">// 这种方案是手动导入，当有多个文件需要导入时，会很不方便</span> <span class="token comment">// const numFn = require('./mock/num')</span>  module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>   <span class="token literal-property property">transpileDependencies</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>   <span class="token comment">// 修改已有的devServer中的web服务器，从而用来模拟web请求，用来mock一些假数据</span>   <span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>     <span class="token comment">// vue中提供的web服务器，使用express框架，app对象它就是一express对象</span>     <span class="token comment">// 此方法就是一个中间件，它必须要return</span>     <span class="token function">setupMiddlewares</span><span class="token punctuation">(</span><span class="token parameter">mids<span class="token punctuation">,</span> <span class="token punctuation">{<!-- --></span> app <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>       <span class="token comment">// numFn(app)</span>       mocks<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">fn</span> <span class="token operator">=&gt;</span> <span class="token function">fn</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span><span class="token punctuation">)</span>       <span class="token keyword">return</span> mids     <span class="token punctuation">}</span>   <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221230/8c11c6a9b1b0d0b5e78fbff6013630f0.jpg" alt="在Vue中mock假数据"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221230/30a035721414a96e46b9f4a56348050b.jpg" alt="在Vue中mock假数据"></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-76856.htm">成都宠物领养平台领养可靠吗现在多少钱一天（成都宠物领养网免费）</a></p>
+                                        <p>下一个：<a href="/news/article-77553.htm">宠物主粮市场占有率排行 宠物主粮市场占有率排行榜</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-50894.htm" title="Spring-RabbitMQ 消费者消息确认案例实践">Spring-RabbitMQ 消费者消息确认案例实践</a></li>
+                        <li class="py-2"><a href="/news/article-49873.htm" title="上海宠物繁殖基地电话（上海宠物繁育基地）">上海宠物繁殖基地电话（上海宠物繁育基地）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-9-free-clash.htm" title="3月9日21.6M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐">3月9日21.6M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-free-ssr-subscribe.htm" title="3月11日19.8M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接，代理机场推荐">3月11日19.8M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-45903.htm" title="如何查看项目的vue版本方法">如何查看项目的vue版本方法</a></li>
+                        <li class="py-2"><a href="/news/article-65695.htm" title="治疗仓鼠宠物医院在线咨询医生（仓鼠宠物医院能治吗）">治疗仓鼠宠物医院在线咨询医生（仓鼠宠物医院能治吗）</a></li>
+                        <li class="py-2"><a href="/news/article-72828.htm" title="动物疫苗证是什么样的图片 动物疫苗证是什么样的图片和价格">动物疫苗证是什么样的图片 动物疫苗证是什么样的图片和价格</a></li>
+                        <li class="py-2"><a href="/news/article-38975.htm" title="动物医院宣传介绍文案（动物医院朋友圈文案）">动物医院宣传介绍文案（动物医院朋友圈文案）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-27-free-v2ray-subscribe.htm" title="2月27日19.9M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐">2月27日19.9M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-72178.htm" title="【厦门宠物狗领养】 厦门宠物狗领养中心">【厦门宠物狗领养】 厦门宠物狗领养中心</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
