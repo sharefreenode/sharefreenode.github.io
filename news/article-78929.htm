@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-78929.htm" />
+    <title>Spring全家桶-Spring Security之自定义表单，认证，鉴权</title>
+        <meta name="description" content="Spring Security是一个能够为基于Spring的企业应用系统提供声明式的安全访问控制解决方案的安全框架。它提供了一组可以在Spring应用上下文中配置的Bean，充分利用了Spring I" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ShareFreeNode节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sharefreenode.github.io/news/article-78929.htm" />
+    <meta property="og:site_name" content="ShareFreeNode节点订阅站" />
+    <meta property="og:title" content="Spring全家桶-Spring Security之自定义表单，认证，鉴权" />
+    <meta property="og:image" content="https://sharefreenode.github.io/uploads/20240415/89c38bad102fbafa8dd31d1fe06586bd.webp" />
+        <meta property="og:release_date" content="2025-03-22T08:47:23" />
+    <meta property="og:updated_time" content="2025-03-22T08:47:23" />
+        <meta property="og:description" content="Spring Security是一个能够为基于Spring的企业应用系统提供声明式的安全访问控制解决方案的安全框架。它提供了一组可以在Spring应用上下文中配置的Bean，充分利用了Spring I" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Spring全家桶-Spring Security之自定义表单，认证，鉴权">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <link href="/assets/website/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+            <a href="/">
+                        Share<span>FreeNode</span>            </a>
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/client.htm">客户端</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>Spring全家桶-Spring Security之自定义表单，认证，鉴权</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night"> </h1> <p><code> Spring Security是一个能够为基于Spring的企业应用系统提供声明式的安全访问控制解决方案的安全框架。它提供了一组可以在Spring应用上下文中配置的Bean，充分利用了Spring IoC（控制反转），DI（依赖注入）和AOP（面向切面编程）功能，为应用系统提供声明式的安全访问控制功能，减少了为企业系统安全控制编写大量重复代码的工作。</code></p> <hr/> <div class="toc"> <h3>文章目录</h3> <ul> <li><a href="#SpringSpring_Security_0" rel="nofollow">Spring全家桶-Spring Security之自定义表单，认证，鉴权</a></li> <li><a href="#_9" rel="nofollow">前言</a></li> <li><a href="#Spring_Security2_16" rel="nofollow">一、Spring Security之自定义表单2</a></li> <li><a href="#_19" rel="nofollow">二、自定义登陆地址和登陆结果处理</a></li> <li> <ul> <li><a href="#1_20" rel="nofollow">1.开始撸代码</a></li> <li><a href="#2__applicationyml_55" rel="nofollow">2. 添加配置文件 application.yml</a></li> <li><a href="#3WebSecurityConfig_68" rel="nofollow">3.添加配置类WebSecurityConfig替换掉默认的配置类</a></li> </ul> </li> <li><a href="#_155" rel="nofollow">三.鉴权</a></li> <li> <ul> <li><a href="#1_156" rel="nofollow">1.设置权限</a></li> <li><a href="#2_176" rel="nofollow">2.验证</a></li> </ul> </li> </ul> </div> <hr/> </h1> <p>我们可以通过自定义的表单进行登陆页的指定，但是有时候，我们是需要前后端分离的，是返回<code>JSON</code>数据到前端并进行相应的跳转，还有进行登陆成功和登陆失败的处理，我们该怎么处理呢？<br /> 默认情况下，<code>Spring Security</code>只给我们提供了一个默认的用户，就算通过配置的话，也只能设置一个用户，那我们怎么处理呢？还有角色怎么处理？想通过不同的角色，不同权限进行不同的请求连接过滤又该如何处理呢？<code>Spring Security</code>为我们提供了默认操作方式，现在就开始吧！????</p> <hr/> </h1> <p>我们继续完善之前的疑问？我们需要处理登录失败和登陆成功的处理，并且需要返回json进行相应的处理，现在进行完善</p> </h1> <h2><a id="1_20" rel="nofollow"></a>1.开始撸代码</h2> <ol> <li>创建项目spring-security-authentication，pom.xml如下：</li> </ol> <pre><code class="prism language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>project</span><span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0<span class="token punctuation">"</span></span><span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span><span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-security-learn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.tony.spring.security<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>1.0-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modelVersion</span><span class="token punctuation">&gt;</span></span>4.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modelVersion</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-security-authentication<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maven.compiler.source</span><span class="token punctuation">&gt;</span></span>11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maven.compiler.source</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maven.compiler.target</span><span class="token punctuation">&gt;</span></span>11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maven.compiler.target</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-security<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project</span><span class="token punctuation">&gt;</span></span></code></pre> <h2><a id="2__applicationyml_55" rel="nofollow"></a>2. 添加配置文件 application.yml</h2> <pre><code class="prism language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span><span class="token key atrule">port</span><span class="token punctuation">:</span><span class="token number">8080</span><span class="token key atrule">spring</span><span class="token punctuation">:</span><span class="token key atrule">security</span><span class="token punctuation">:</span><span class="token key atrule">user</span><span class="token punctuation">:</span><span class="token key atrule">name</span><span class="token punctuation">:</span> tony<span class="token key atrule">password</span><span class="token punctuation">:</span><span class="token number">123456</span><span class="token key atrule">roles</span><span class="token punctuation">:</span><span class="token comment">#指定相关角色，进行鉴权使用</span><span class="token punctuation">-</span><span class="token string">"admin"</span></code></pre> <h2><a id="3WebSecurityConfig_68" rel="nofollow"></a>3.添加配置类WebSecurityConfig替换掉默认的配置类</h2> <p>修改登陆配置信息，进行相关的配置：<code>WebSecurityConfig</code>如下:</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@EnableWebSecurity</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">WebSecurityConfig</span><span class="token keyword">extends</span><span class="token class-name">WebSecurityConfigurerAdapter</span><span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@Override</span><span class="token keyword">protected</span><span class="token keyword">void</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token class-name">HttpSecurity</span> http<span class="token punctuation">)</span><span class="token keyword">throws</span><span class="token class-name">Exception</span><span class="token punctuation">{<!-- --></span>          http<span class="token punctuation">.</span><span class="token function">authorizeRequests</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">antMatchers</span><span class="token punctuation">(</span><span class="token string">"/book/**"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hasRole</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">antMatchers</span><span class="token punctuation">(</span><span class="token string">"/user/**"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hasRole</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">antMatchers</span><span class="token punctuation">(</span><span class="token string">"/index/**"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">permitAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">antMatchers</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hasAnyRole</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">,</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">anyRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">authenticated</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">and</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">formLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">loginPage</span><span class="token punctuation">(</span><span class="token string">"/login.html"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">permitAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">successHandler</span><span class="token punctuation">(</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">,</span> authentication<span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token punctuation">{<!-- --></span>                     response<span class="token punctuation">.</span><span class="token function">setContentType</span><span class="token punctuation">(</span><span class="token string">"application/json;charset=UTF-8;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">PrintWriter</span> printWriter<span class="token operator">=</span> response<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">String</span> successJson<span class="token operator">=</span><span class="token string">"{\"code\":\"0000\",\"message\":\"认证成功\",\"success\":true}"</span><span class="token punctuation">;</span>                     printWriter<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>successJson<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">failureHandler</span><span class="token punctuation">(</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">,</span> exception<span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token punctuation">{<!-- --></span>                     response<span class="token punctuation">.</span><span class="token function">setContentType</span><span class="token punctuation">(</span><span class="token string">"application/json;charset=UTF-8;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                     response<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span><span class="token class-name">HttpServletResponse</span><span class="token punctuation">.</span>SC_UNAUTHORIZED<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">PrintWriter</span> printWriter<span class="token operator">=</span> response<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">String</span> successJson<span class="token operator">=</span><span class="token string">"{\"code\":\"10001\",\"message\":\"认证失败\",\"success\":false}"</span><span class="token punctuation">;</span>                     printWriter<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>successJson<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">and</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">csrf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">disable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>鉴权问题等会会说到哦。<br /><code>Spring Security</code>为我们提供了两个方法，一个是<code>successHandler()</code>方法，一个是<code>failureHandler()</code>方法。</p> <pre><code class="prism language-java"><span class="token comment">//处理登陆成功的逻辑</span><span class="token keyword">public</span><span class="token keyword">final</span><span class="token class-name">T</span><span class="token function">successHandler</span><span class="token punctuation">(</span><span class="token class-name">AuthenticationSuccessHandler</span> successHandler<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">this</span><span class="token punctuation">.</span>successHandler<span class="token operator">=</span> successHandler<span class="token punctuation">;</span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getSelf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">//处理登陆失败的逻辑</span><span class="token keyword">public</span><span class="token keyword">final</span><span class="token class-name">T</span><span class="token function">failureHandler</span><span class="token punctuation">(</span><span class="token class-name">AuthenticationFailureHandler</span> authenticationFailureHandler<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">this</span><span class="token punctuation">.</span>failureUrl<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span><span class="token keyword">this</span><span class="token punctuation">.</span>failureHandler<span class="token operator">=</span> authenticationFailureHandler<span class="token punctuation">;</span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getSelf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p><code>successHandler()</code>方法会携带当前登陆用户名及其角色等信息，<code>failureHandler()</code>方法会携带一个认证异常信息，通过这个异常可以进行相关的自有逻辑处理。<br /> 并且我们可以通过<code>defaultSuccessUrl()</code>方法和<code>failureUrl()</code>方法进行处理登陆成功和失败的跳转页面，也可以使用<code>successForwardUrl()</code>方法和<code>failureForwardUrl()</code>方法进行forward当相关的页面。<br /> 当我们使用<code>successHandler</code>和<code>failureHandler</code>处理返回<code>JSON</code>的时候，不会跳转到defaultSuccessUrl和failureUrl指定的url中。<br /> 运行程序可以试试：<br /> 当登陆成功：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/ed8120813e71754a251fd9da94ac503a.jpg" alt="Spring全家桶-Spring Security之自定义表单，认证，鉴权"><br /> 登陆失败：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/77c20e894639ea0a9a763818bd160449.jpg" alt="Spring全家桶-Spring Security之自定义表单，认证，鉴权"><br /> 调试信息：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/2d9598111d4500971fb0766027690f8e.jpg" alt="Spring全家桶-Spring Security之自定义表单，认证，鉴权"><br /> 这里的角色信息，是配置文件里面的。<br /> 查询认证信息的时候，通过User类追加的ROLE_</p> <pre><code class="prism language-java"><span class="token keyword">public</span><span class="token class-name">User<span class="token punctuation">.</span>UserBuilder</span><span class="token function">roles</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> roles<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">GrantedAuthority</span><span class="token punctuation">&gt;</span></span> authorities<span class="token operator">=</span><span class="token keyword">new</span><span class="token class-name">ArrayList</span><span class="token punctuation">(</span>roles<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> var3<span class="token operator">=</span> roles<span class="token punctuation">;</span><span class="token keyword">int</span> var4<span class="token operator">=</span> roles<span class="token punctuation">.</span>length<span class="token punctuation">;</span><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> var5<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> var5<span class="token operator">&lt;</span> var4<span class="token punctuation">;</span><span class="token operator">++</span>var5<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token class-name">String</span> role<span class="token operator">=</span> var3<span class="token punctuation">[</span>var5<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token class-name">Assert</span><span class="token punctuation">.</span><span class="token function">isTrue</span><span class="token punctuation">(</span><span class="token operator">!</span>role<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"ROLE_"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span> role<span class="token operator">+</span><span class="token string">" cannot start with ROLE_ (it is automatically added)"</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                 authorities<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token class-name">SimpleGrantedAuthority</span><span class="token punctuation">(</span><span class="token string">"ROLE_"</span><span class="token operator">+</span> role<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">authorities</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Collection</span><span class="token punctuation">)</span>authorities<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>在项目中打个断点看看错误信息：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/88e284e6c37d32d2e574fed17e925331.jpg" alt="Spring全家桶-Spring Security之自定义表单，认证，鉴权"></p> </h1> <h2><a id="1_156" rel="nofollow"></a>1.设置权限</h2> <p>我们在上面的配置文件中，设置了<code>/book/**</code>，<code>/user/**</code>，<code>/index/**</code>，并且设置了相应的角色访问权限。</p> <pre><code class="prism language-java"><span class="token punctuation">.</span><span class="token function">antMatchers</span><span class="token punctuation">(</span><span class="token string">"/book/**"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hasRole</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">antMatchers</span><span class="token punctuation">(</span><span class="token string">"/user/**"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hasRole</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">antMatchers</span><span class="token punctuation">(</span><span class="token string">"/index/**"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">permitAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">antMatchers</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hasAnyRole</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">,</span><span class="token string">"user"</span><span class="token punctuation">)</span></code></pre> <p><code>antMatchers()</code> 是一个采用ANT模式的URL匹配器。<br /> ANT模式使用</p> <ol> <li>?:匹配任意单个字符，</li> <li>*:匹配0或任意数量的字符</li> <li>**:匹配0或者更多的目录<br /> 上面说明book的路径下需要admin权限，user路径下，需要user权限，<br /> index路径下不需要权限，可以公开访问。<br /> 我们现在登陆的用户是配置文件中的用户，是通过在<code>内存</code>中去处理用户的信息，到时候我们会将用户信息保存到<code>数据库</code>中进行处理。</li> </ol> <h2><a id="2_176" rel="nofollow"></a>2.验证</h2> <p>登陆用户为：tony，密码：123456，并且角色为admin<br /> 我看看运行情况：当用此用户访问user接口<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/4821fef680a0e9fed00fea7820351fc7.jpg" alt="Spring全家桶-Spring Security之自定义表单，认证，鉴权"><br /> 因为没有权限，因此会配置错误页面，spring的错误页为/error.html<br /> 当我们访问book接口试试：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/cfcbbdbb147f4d88237f3ec9c6c96f7f.jpg" alt="Spring全家桶-Spring Security之自定义表单，认证，鉴权"><br /> 说明当前接口是可以访问的。当我们登出之后，访问index接口试试<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/e5d81d4fef7c00f7f6e948b37522cc76.jpg" alt="Spring全家桶-Spring Security之自定义表单，认证，鉴权"><br /> 同时在访问user接口和book接口全部都要跳转到登陆页<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/e98cd7f30df7f5da9f20c552482e3964.jpg" alt="Spring全家桶-Spring Security之自定义表单，认证，鉴权"><br /> 说明这两个接口是需要鉴权的。但是我们现在还是只有一个用户，然而多个用户的情况下，怎么处理了？</p> <ol> <li>通过<code>InMemoryUserDetailsManager</code>实现内存进行用户管理</li> <li>通过<code>JdbcUserDetailsManager</code>实现数据库进行用户管理</li> </ol> <hr/> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-78238.htm">使用maven命令直接打包war项目</a></p>
+                                        <p>下一个：<a href="/news/article-78930.htm">动物疫苗研究现状分析（动物疫苗的发展现状）</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-62666.htm" title="数据库时间问题">数据库时间问题</a></li>
+                        <li class="py-2"><a href="/news/article-47865.htm" title="动物防疫疫苗管理工作方案范文大全（动物疫苗管理办法）">动物防疫疫苗管理工作方案范文大全（动物疫苗管理办法）</a></li>
+                        <li class="py-2"><a href="/news/article-45904.htm" title="2022公务员国考报名流程（国家公务员国考报名）">2022公务员国考报名流程（国家公务员国考报名）</a></li>
+                        <li class="py-2"><a href="/news/article-60295.htm" title="全国宠物领养平台可信吗现在（全国宠物领养中心官网）">全国宠物领养平台可信吗现在（全国宠物领养中心官网）</a></li>
+                        <li class="py-2"><a href="/news/article-65695.htm" title="治疗仓鼠宠物医院在线咨询医生（仓鼠宠物医院能治吗）">治疗仓鼠宠物医院在线咨询医生（仓鼠宠物医院能治吗）</a></li>
+                        <li class="py-2"><a href="/news/article-49370.htm" title="常见 几种 git操作代码回退的方法">常见 几种 git操作代码回退的方法</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-14-free-clash-subscribe.htm" title="2月14日19.8M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">2月14日19.8M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-70854.htm" title="网络协议之:socket协议详解之Datagram Socket">网络协议之:socket协议详解之Datagram Socket</a></li>
+                        <li class="py-2"><a href="/news/article-44914.htm" title="骨架屏技术讲解以及如何在Vue中实现骨架屏">骨架屏技术讲解以及如何在Vue中实现骨架屏</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-free-ssr-subscribe.htm" title="3月11日19.8M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接，代理机场推荐">3月11日19.8M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">72</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
