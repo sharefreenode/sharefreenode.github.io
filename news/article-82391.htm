@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-82391.htm" />
+    <title>mybatis mysql 多租户_详解基于Mybatis-plus多租户实现方案</title>
+        <meta name="description" content="一、引言 小编先解释一下什么叫多租户，什么场景下使用多租户。 多租户是一种软件架构技术，在多用户的环境下，共有同一套系统，并且要注意数据之间的隔离性。 举个实际例子：小编曾经开发过一套支付宝程序，这套" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ShareFreeNode节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sharefreenode.github.io/news/article-82391.htm" />
+    <meta property="og:site_name" content="ShareFreeNode节点订阅站" />
+    <meta property="og:title" content="mybatis mysql 多租户_详解基于Mybatis-plus多租户实现方案" />
+    <meta property="og:image" content="https://sharefreenode.github.io/uploads/20240415/f18262eb83c405b54fe9ad46641c9dcc.webp" />
+        <meta property="og:release_date" content="2025-03-27T08:13:39" />
+    <meta property="og:updated_time" content="2025-03-27T08:13:39" />
+        <meta property="og:description" content="一、引言 小编先解释一下什么叫多租户，什么场景下使用多租户。 多租户是一种软件架构技术，在多用户的环境下，共有同一套系统，并且要注意数据之间的隔离性。 举个实际例子：小编曾经开发过一套支付宝程序，这套" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="mybatis mysql 多租户_详解基于Mybatis-plus多租户实现方案">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <link href="/assets/website/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+            <a href="/">
+                        Share<span>FreeNode</span>            </a>
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/client.htm">客户端</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>mybatis mysql 多租户_详解基于Mybatis-plus多租户实现方案</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p>一、引言</p> <p>小编先解释一下什么叫多租户，什么场景下使用多租户。</p> <p>多租户是一种软件架构技术，在多用户的环境下，共有同一套系统，并且要注意数据之间的隔离性。</p> <p>举个实际例子：小编曾经开发过一套支付宝程序，这套程序应用在不同的小程序上，当使用者访问不同，并且进入相对应的小程序页面，小程序则会把用户相关数据传输到小编这里。在传输的时候需要带上小程序标识(租户ID)，以便小编将数据进行隔离。</p> <p>当不同的租户使用同一套程序，这里就需要考虑一个数据隔离的情况。</p> <p>数据隔离有三种方案：</p> <p>1、独立数据库：简单来说就是一个租户使用一个数据库，这种数据隔离级别最高，安全性最好，但是提高成本。</p> <p>2、共享数据库、隔离数据架构：多租户使用同一个数据裤，但是每个租户对应一个Schema(数据库user)。-</p> <p>3、共享数据库、共享数据架构：使用同一个数据库，同一个Schema，但是在表中增加了租户ID的字段，这种共享数据程度最高，隔离级别最低。</p> <p>二、具体实现</p> <p>这里采用方案三，即共享数据库，共享数据架构，因为这种方案服务器成本最低，但是提高了开发成本。</p> <p>实现架构逻辑：</p> <p align="center"><img decoding="async" src="http://img.555519.xyz/uploads3/20220605/e37f329a5ca6553b0c7ee638ce66cdbc.jpg" alt="mybatis mysql 多租户_详解基于Mybatis-plus多租户实现方案"></p> <p>Mybatis-plus实现多租户方案</p> <p>Mybatis-plus就提供了一种多租户的解决方案，实现方式是基于分页插件(拦截器)进行实现的；</p> <p>第一步：在应用添加维护一张tenant(租户表)，在需要进行隔离的数据表上新增租户id；</p> <p>第二步：实现TenantHandler接口并实现它的方法：</p> <p>public interface TenantHandler {<!-- --></p> <p>/**</p> <p>* 获取租户 ID 值表达式，支持多个 ID 条件查询</p> <p>*</p> <p>* 支持自定义表达式，比如：tenant_id in (1,2) @since 2019-8-2</p> <p>*</p> <p>* @param where 参数 true 表示为 where 条件 false 表示为 insert 或者 select 条件</p> <p>* @return 租户 ID 值表达式</p> <p>*/</p> <p>Expression getTenantId(boolean where);</p> <p>/**</p> <p>* 获取租户字段名</p> <p>*</p> <p>* @return 租户字段名</p> <p>*/</p> <p>String getTenantIdColumn();</p> <p>/**</p> <p>* 根据表名判断是否进行过滤</p> <p>*</p> <p>* @param tableName 表名</p> <p>* @return 是否进行过滤, true:表示忽略，false:需要解析多租户字段</p> <p>*/</p> <p>boolean doTableFilter(String tableName);</p> <p>}</p> <p>PreTenantHandler 实现 TenantHandler</p> <p>@Slf4j</p> <p>@Component</p> <p>public class PreTenantHandler implements TenantHandler {<!-- --></p> <p>@Autowired</p> <p>private PreTenantConfigProperties configProperties;</p> <p>/**</p> <p>* 租户Id</p> <p>*</p> <p>* @return</p> <p>*/</p> <p>@Override</p> <p>public Expression getTenantId(boolean where) {<!-- --></p> <p>//可以通过过滤器从请求中获取对应租户id</p> <p>Long tenantId = PreTenantContextHolder.getCurrentTenantId();</p> <p>log.debug("当前租户为{}", tenantId);</p> <p>if (tenantId == null) {<!-- --></p> <p>return new NullValue();</p> <p>}</p> <p>return new LongValue(tenantId);</p> <p>}</p> <p>/**</p> <p>* 租户字段名</p> <p>*</p> <p>* @return</p> <p>*/</p> <p>@Override</p> <p>public String getTenantIdColumn() {<!-- --></p> <p>return configProperties.getTenantIdColumn();</p> <p>}</p> <p>/**</p> <p>* 根据表名判断是否进行过滤</p> <p>* 忽略掉一些表：如租户表(sys_tenant)本身不需要执行这样的处理</p> <p>*</p> <p>* @param tableName</p> <p>* @return</p> <p>*/</p> <p>@Override</p> <p>public boolean doTableFilter(String tableName) {<!-- --></p> <p>return configProperties.getIgnoreTenantTables().stream().anyMatch((e) -&gt; e.equalsIgnoreCase(tableName));</p> <p>}</p> <p>}</p> <p>第三步：配置mybatisPlus的分页插件配置</p> <p>@EnableTransactionManagement</p> <p>@Configuration</p> <p>@MapperScan({"com.xd.pre.**.mapper"})</p> <p>public class MyBatisPlusConfig {<!-- --></p> <p>@Autowired</p> <p>private PreTenantHandler preTenantHandler;</p> <p>/**</p> <p>* 分页插件</p> <p>*/</p> <p>@Bean</p> <p>public PaginationInterceptor paginationInterceptor() {<!-- --></p> <p>PaginationInterceptor paginationInterceptor = new PaginationInterceptor();</p> <p>List sqlParserList = new ArrayList&lt;&gt;();</p> <p>// 攻击 SQL 阻断解析器、加入解析链</p> <p>sqlParserList.add(new BlockAttackSqlParser());</p> <p>// 多租户拦截</p> <p>TenantSqlParser tenantSqlParser = new TenantSqlParser();</p> <p>tenantSqlParser.setTenantHandler(preTenantHandler);</p> <p>sqlParserList.add(tenantSqlParser);</p> <p>paginationInterceptor.setSqlParserList(sqlParserList);</p> <p>return paginationInterceptor;</p> <p>}</p> <p>}</p> <p>配置好之后，不管是查询、新增、修改删除方法，MP都会自动加上租户ID的标识，测试如下：</p> <p>@Test</p> <p>public void select(){<!-- --></p> <p>List users = userMapper.selectList(Wrappers.lambdaQuery().eq(User::getAge, 18));</p> <p>users.forEach(System.out::println);</p> <p>}</p> <p>运行sql实例：</p> <p>DEBUG==&gt; Preparing: SELECT id, login_name, name, password,</p> <p>email, salt, sex, age, phone, user_type, status,</p> <p>organization_id, create_time, update_time, version,</p> <p>tenant_id FROM sys_user</p> <p>WHERE sys_user.tenant_id = '001' AND is_delete = '0' AND age = ?</p> <p>注：特定SQL过滤 如果在程序中，有部分SQL不需要加上租户ID的表示，需要过滤特定的sql，可以通过如下两种方式：</p> <p>方式一：在配置分页插件中加上配置ISqlParserFilter解析器，如果配置SQL很多，比较麻烦，不建议；</p> <p>paginationInterceptor.setSqlParserFilter(new ISqlParserFilter() {<!-- --></p> <p>@Override</p> <p>public boolean doFilter(MetaObject metaObject) {<!-- --></p> <p>MappedStatement ms = SqlParserHelper.getMappedStatement(metaObject);</p> <p>// 对应Mapper、dao中的方法</p> <p>if("com.example.demo.mapper.UserMapper.selectList".equals(ms.getId())){<!-- --></p> <p>return true;</p> <p>}</p> <p>return false;</p> <p>}</p> <p>});</p> <p>方式二：通过租户注解 @SqlParser(filter = true) 的形式，目前只能作用于Mapper的方法上：</p> <p>public interface UserMapper extends BaseMapper {<!-- --></p> <p>/**</p> <p>* 自定Wrapper修改</p> <p>*</p> <p>* @param userWrapper 条件构造器</p> <p>* @param user 修改的对象参数</p> <p>* @return</p> <p>*/</p> <p>@SqlParser(filter = true)</p> <p>int updateByMyWrapper(@Param(Constants.WRAPPER) Wrapper userWrapper, @Param("user") User user);</p> <p>}</p> <p>注：</p> <p align="center"><img decoding="async" src="http://img.555519.xyz/uploads3/20220605/37533b9b03ca6438db4abf5a057b5425.jpg" alt="mybatis mysql 多租户_详解基于Mybatis-plus多租户实现方案"></p> <p>到此这篇关于详解基于Mybatis-plus多租户实现方案的文章就介绍到这了,更多相关Mybatis-plus多租户内容请搜索以前的文章或继续浏览下面的相关文章希望大家以后多多支持！</p> </div> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-81654.htm">宠物粮食品牌前十名排行榜有哪些品种的狗（宠物粮种类）</a></p>
+                                        <p>下一个：<a href="/news/article-82392.htm">专门卖宠物的app网名大全（卖宠物网有哪些）</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-5-free-subscribe-node.htm" title="2月5日22.8M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐">2月5日22.8M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-65695.htm" title="治疗仓鼠宠物医院在线咨询医生（仓鼠宠物医院能治吗）">治疗仓鼠宠物医院在线咨询医生（仓鼠宠物医院能治吗）</a></li>
+                        <li class="py-2"><a href="/news/article-69553.htm" title="昆明领养宠物的地方在哪里（昆明市领养宠物）">昆明领养宠物的地方在哪里（昆明市领养宠物）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-7-free-clash.htm" title="3月7日22.7M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接，代理机场推荐">3月7日22.7M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-70855.htm" title="动物防疫站几点关门 动物防疫站几点关门啊">动物防疫站几点关门 动物防疫站几点关门啊</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-free-ssr-node.htm" title="1月13日19.8M/S|Shadowrocket/SSR/V2ray/Clash免费节点每天更新订阅链接，代理机场推荐">1月13日19.8M/S|Shadowrocket/SSR/V2ray/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-25-clash-v2ray-ss-ssr.htm" title="1月25日19.6M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">1月25日19.6M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-45903.htm" title="如何查看项目的vue版本方法">如何查看项目的vue版本方法</a></li>
+                        <li class="py-2"><a href="/news/article-47866.htm" title="中牧兽用疫苗厂家电话（中牧股份动物疫苗）">中牧兽用疫苗厂家电话（中牧股份动物疫苗）</a></li>
+                        <li class="py-2"><a href="/news/article-73498.htm" title="设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现">设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
