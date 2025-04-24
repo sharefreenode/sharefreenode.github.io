@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-101380.htm" />
+    <title>PHP switch声明</title>
+        <meta name="description" content="介绍 如果程序需要一系列的if语句来执行不同的过程来改变表达式的值，则每个if语句都有自己的大括号，这可能会变得很笨拙。在这里，使用swtich-case构造可以使程序紧凑且易读。使用switch构造" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ShareFreeNode节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sharefreenode.github.io/news/article-101380.htm" />
+    <meta property="og:site_name" content="ShareFreeNode节点订阅站" />
+    <meta property="og:title" content="PHP switch声明" />
+    <meta property="og:image" content="https://sharefreenode.github.io/uploads/20240415/def290b4130eb308b1fbe53c55454ab5.webp" />
+        <meta property="og:release_date" content="2025-04-22T08:22:50" />
+    <meta property="og:updated_time" content="2025-04-22T08:22:50" />
+        <meta property="og:description" content="介绍 如果程序需要一系列的if语句来执行不同的过程来改变表达式的值，则每个if语句都有自己的大括号，这可能会变得很笨拙。在这里，使用swtich-case构造可以使程序紧凑且易读。使用switch构造" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PHP switch声明">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <link href="/assets/website/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+            <a href="/">
+                        Share<span>FreeNode</span>            </a>
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/client.htm">客户端</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>PHP switch声明</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail">
+                      				  				  				<h2>介绍</h2> <p>如果程序需要一系列的if语句来执行不同的过程来改变表达式的值，则每个if语句都有自己的大括号，这可能会变得很笨拙。在这里，使用<strong>swtich-case</strong>构造可以使程序紧凑且易读。使用switch构造，可以将相同的变量（或表达式）与许多不同的值进行比较，并根据其等于哪个值来执行不同的代码段。</p> <h2>语法</h2> <pre>switch&nbsp;(expr)&nbsp;{ &nbsp;&nbsp;&nbsp;case&nbsp;val1: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code&nbsp;to&nbsp;be&nbsp;executed&nbsp;if&nbsp;expr=val1; &nbsp;&nbsp;&nbsp;break; &nbsp;&nbsp;&nbsp;case&nbsp;val2: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code&nbsp;to&nbsp;be&nbsp;executed&nbsp;if&nbsp;expr=val2; &nbsp;&nbsp;&nbsp;break; &nbsp;&nbsp;&nbsp;... &nbsp;&nbsp;&nbsp;... &nbsp;&nbsp;&nbsp;default: &nbsp;&nbsp;&nbsp;code&nbsp;to&nbsp;be&nbsp;executed&nbsp;if&nbsp;expr&nbsp;is&nbsp;not&nbsp;equal&nbsp;to&nbsp;any&nbsp;of&nbsp;above&nbsp;values; }</pre> <p>在每个case块之后给出<strong>break</strong>语句很重要，这样可以使剩下的case程序流无效。</p> <p>在下面的示例中，要求用户输入两个数字和一个数字，作为算术运算类型的1/2/3/4，用于加/减/乘/除</p> <h2>示例</h2> <pre>&lt;?php $first=(int)readline("enter&nbsp;a&nbsp;number"); $second=(int)readline("enter&nbsp;another&nbsp;number"); $x=readline("enter&nbsp;1/2/3/4&nbsp;for&nbsp;add/subtract/multiply/divide"); $result=0; switch($x){ &nbsp;&nbsp;&nbsp;case&nbsp;1:&nbsp;echo&nbsp;$first+$second;&nbsp;break; &nbsp;&nbsp;&nbsp;case&nbsp;2:&nbsp;echo&nbsp;$first-$second;&nbsp;break; &nbsp;&nbsp;&nbsp;case&nbsp;3:&nbsp;echo&nbsp;$first*$second;&nbsp;break; &nbsp;&nbsp;&nbsp;case&nbsp;4:&nbsp;echo&nbsp;$first/$second;&nbsp;break; &nbsp;&nbsp;&nbsp;default:&nbsp;echo&nbsp;"Incorrect&nbsp;input"; } ?&gt;</pre> <p>输出结果</p> <p>这将产生以下结果-</p> <pre>Incorrect&nbsp;input</pre> <p>的<strong>默认</strong>如果开关表达式不匹配特定的情况下要执行的关键字用于指定语句块</p> <p>如果特定案例块为空，则将流程简单地传递到下一个案例。</p> <h2>示例</h2> <pre>&lt;?php $x=(int)readline("enter&nbsp;a&nbsp;number"); switch($x){ &nbsp;&nbsp;&nbsp;case&nbsp;1: &nbsp;&nbsp;&nbsp;case&nbsp;2:&nbsp;echo&nbsp;"x&nbsp;is&nbsp;less&nbsp;than&nbsp;3";&nbsp;break; &nbsp;&nbsp;&nbsp;case&nbsp;3:&nbsp;echo&nbsp;"x&nbsp;is&nbsp;equal&nbsp;to&nbsp;3";&nbsp;break; &nbsp;&nbsp;&nbsp;case&nbsp;4:&nbsp;echo&nbsp;"x&nbsp;is&nbsp;greater&nbsp;than&nbsp;3";break; &nbsp;&nbsp;&nbsp;default:&nbsp;echo&nbsp;"x&nbsp;is&nbsp;beyound&nbsp;1&nbsp;to&nbsp;4"; } ?&gt;</pre> <p>输出结果</p> <p>这将产生以下结果-</p> <pre>x&nbsp;is&nbsp;beyound&nbsp;1&nbsp;to&nbsp;4</pre> <p>可以使用<strong>字符串</strong>值与开关表达式进行比较</p> <h2>示例</h2> <pre>&lt;?php $x=readline("enter&nbsp;a&nbsp;something.."); switch($x){ &nbsp;&nbsp;&nbsp;case&nbsp;"India":&nbsp;echo&nbsp;"you&nbsp;entered&nbsp;India";&nbsp;break; &nbsp;&nbsp;&nbsp;case&nbsp;"USA":&nbsp;echo&nbsp;"You&nbsp;typed&nbsp;USA";&nbsp;break; &nbsp;&nbsp;&nbsp;case&nbsp;"Mumbai":&nbsp;echo&nbsp;"you&nbsp;entered&nbsp;Mumbai";break; &nbsp;&nbsp;&nbsp;default:&nbsp;echo&nbsp;"you&nbsp;entered&nbsp;something&nbsp;else"; } ?&gt;</pre> <p>输出结果</p> <p>这将产生以下结果-</p> <pre>you&nbsp;entered&nbsp;something&nbsp;else</pre> <div></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-100737.htm">免费领养狗狗正规网站平台有哪些软件 免费领养狗狗正规网站平台有哪些软件好</a></p>
+                                        <p>下一个：<a href="/news/article-101381.htm">济南美联广场美食（济南美莲广场有什么好玩的）</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-16-clash-node.htm" title="3月16日22.1M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐">3月16日22.1M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-90284.htm" title="加盟宠物店挣钱吗（加盟宠物店大概需要多少钱）">加盟宠物店挣钱吗（加盟宠物店大概需要多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-78929.htm" title="Spring全家桶-Spring Security之自定义表单，认证，鉴权">Spring全家桶-Spring Security之自定义表单，认证，鉴权</a></li>
+                        <li class="py-2"><a href="/news/article-66975.htm" title="宠物疫苗可以上地铁吗北京（北京宠物猫可以上地铁吗）">宠物疫苗可以上地铁吗北京（北京宠物猫可以上地铁吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-5-node-share-links.htm" title="4月5日20.2M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐">4月5日20.2M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-70855.htm" title="动物防疫站几点关门 动物防疫站几点关门啊">动物防疫站几点关门 动物防疫站几点关门啊</a></li>
+                        <li class="py-2"><a href="/news/article-72827.htm" title="南京宠物猫领养中心电话地址查询（南京猫咪领养中心）">南京宠物猫领养中心电话地址查询（南京猫咪领养中心）</a></li>
+                        <li class="py-2"><a href="/news/article-96987.htm" title="南京领养狗狗多少钱（南京市宠物领养）">南京领养狗狗多少钱（南京市宠物领养）</a></li>
+                        <li class="py-2"><a href="/news/article-88107.htm" title="厦门宠物狗免费赠送 厦门宠物狗免费赠送活动">厦门宠物狗免费赠送 厦门宠物狗免费赠送活动</a></li>
+                        <li class="py-2"><a href="/news/article-102953.htm" title="十大宠物品牌排行榜图片（十大宠物品牌排行榜图片）">十大宠物品牌排行榜图片（十大宠物品牌排行榜图片）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
