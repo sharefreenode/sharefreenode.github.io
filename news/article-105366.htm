@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-105366.htm" />
+    <title>C ++中的最大和圆子数组</title>
+        <meta name="description" content="假设我们有一个由A表示的整数的圆形数组C，我们必须找到C的一个非空子数组的最大和。而且，一个子数组最多只能包含固定缓冲区A的每个元素。如果数组类似于[1，-2,3，-2]，则输出将为3。这是因为sub" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ShareFreeNode节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sharefreenode.github.io/news/article-105366.htm" />
+    <meta property="og:site_name" content="ShareFreeNode节点订阅站" />
+    <meta property="og:title" content="C ++中的最大和圆子数组" />
+    <meta property="og:image" content="https://sharefreenode.github.io/uploads/20240415/d9468afb6fd1728cfc3d75f99bb35a7c.webp" />
+        <meta property="og:release_date" content="2025-04-27T08:26:38" />
+    <meta property="og:updated_time" content="2025-04-27T08:26:38" />
+        <meta property="og:description" content="假设我们有一个由A表示的整数的圆形数组C，我们必须找到C的一个非空子数组的最大和。而且，一个子数组最多只能包含固定缓冲区A的每个元素。如果数组类似于[1，-2,3，-2]，则输出将为3。这是因为sub" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C ++中的最大和圆子数组">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <link href="/assets/website/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+            <a href="/">
+                        Share<span>FreeNode</span>            </a>
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/client.htm">客户端</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>C ++中的最大和圆子数组</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<p>假设我们有一个由A表示的整数的圆形数组C，我们必须找到C的一个非空子数组的最大和。而且，一个子数组最多只能包含固定缓冲区A的每个元素。如果数组类似于[1，-2,3，-2]，则输出将为3。这是因为subarray [3]的总和为3。</p> <p>为了解决这个问题，我们将遵循以下步骤-</p> <ul class="list-paddingleft-2"> <li> <p>n：= v的大小</p> </li> <li> <p>创建所有大小为n的数组leftSum，leftSumMax，rightSum，rightSumMax</p> </li> <li> <p>leftSum [0]：= v [0]，leftSumMax [0]：=最大值0和v [0]</p> </li> <li> <p>当我在1到n – 1的范围内时</p> </li> <ul class="list-paddingleft-2" style="list-style-type: square;"> <li> <p>leftSum [i]：= leftSum [i-1] + v [i]</p> </li> <li> <p>leftSumMax [i]：= leftSum [i]和leftSumMax [i-1]的最大值</p> </li> </ul> <li> <p>rightSum [n-1]：= v [n-1]，leftSumMax [n-1]：= 0和v [n-1]的最大值</p> </li> <li> <p>当我在n-2范围内降至0</p> </li> <ul class="list-paddingleft-2" style="list-style-type: square;"> <li> <p>rightSum [i]：= rightSum [i + 1] + v [i]</p> </li> <li> <p>rightSumMax [i]：= rightSum [i + 1]和rightSum Max [i]的最大值</p> </li> </ul> <li> <p>leftAns：= leftSum [0] + rightSumMax [1]</p> </li> <li> <p>当我在1到n – 2的范围内时</p> </li> <ul class="list-paddingleft-2" style="list-style-type: square;"> <li> <p>leftAns：= leftAns的最大值，leftSum [i] + rightSumMax [i +1]</p> </li> </ul> <li> <p>rightAns：= rightSum [n-1] + leftSumMax [n-2]</p> </li> <li> <p>对于范围在n-2到1的i</p> </li> <ul class="list-paddingleft-2" style="list-style-type: square;"> <li> <p>rightAns：= rightAns的最大值，rightSum [i] + leftSumMax [i-1]</p> </li> </ul> <li> <p>curr：= v [0]，kadane：= v [0]</p> </li> <li> <p>当我在1到n – 1的范围内时</p> </li> <ul class="list-paddingleft-2" style="list-style-type: square;"> <li> <p>curr：= v [1]的最大值，curr + v [i]</p> </li> <li> <p>kadane：= curr和kadane的最大值</p> </li> </ul> <li> <p>返回leftAns，rightAns和kadane的最大值</p> </li> </ul> <p>让我们看下面的实现以更好地理解-</p> <h2>示例</h2> <pre>#include&nbsp;&lt;bits/stdc++.h&gt; using&nbsp;namespace&nbsp;std; class&nbsp;Solution&nbsp;{ &nbsp;&nbsp;&nbsp;public: &nbsp;&nbsp;&nbsp;int&nbsp;maxSubarraySumCircular(vector&lt;int&gt;&amp;&nbsp;v)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;n&nbsp;=&nbsp;v.size(); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vector&nbsp;&lt;int&gt;&nbsp;leftSum(n),leftSumMax(n),rightSum(n),&nbsp;rightSumMax(n); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leftSum[0]&nbsp;=&nbsp;v[0]; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leftSumMax[0]&nbsp;=&nbsp;max((int)0,v[0]); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int&nbsp;i&nbsp;=1;i&lt;n;i++){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leftSum[i]&nbsp;=&nbsp;leftSum[i-1]&nbsp;+&nbsp;v[i]; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leftSumMax[i]&nbsp;=&nbsp;max(leftSum[i],leftSumMax[i-1]); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rightSum[n-1]&nbsp;=&nbsp;v[n-1]; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rightSumMax[n-1]&nbsp;=&nbsp;max((int)0,v[n-1]); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int&nbsp;i&nbsp;=n-2;i&gt;=0;i--){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rightSum[i]&nbsp;=&nbsp;rightSum[i+1]+v[i]; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rightSumMax[i]&nbsp;=&nbsp;max(rightSumMax[i+1],rightSum[i]); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;leftAns=leftSum[0]+rightSumMax[1]; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int&nbsp;i&nbsp;=1;i&lt;n-1;i++){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leftAns&nbsp;=&nbsp;max(leftAns,leftSum[i]+rightSumMax[i+1]); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;rightAns&nbsp;=&nbsp;rightSum[n-1]+leftSumMax[n-2]; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int&nbsp;i&nbsp;=n-2;i&gt;=1;i--){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rightAns&nbsp;=&nbsp;max(rightAns,rightSum[i]+leftSumMax[i-1]); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;curr=v[0]; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;kadane&nbsp;=&nbsp;v[0]; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int&nbsp;i&nbsp;=1;i&lt;n;i++){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curr&nbsp;=&nbsp;max(v[i],curr+v[i]); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kadane&nbsp;=&nbsp;max(curr,kadane); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;max(leftAns,max(rightAns,kadane)); &nbsp;&nbsp;&nbsp;} }; main(){ &nbsp;&nbsp;&nbsp;vector&lt;int&gt;&nbsp;v&nbsp;=&nbsp;{1,-2,3,-2}; &nbsp;&nbsp;&nbsp;Solution&nbsp;ob; &nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;(ob.maxSubarraySumCircular(v)); }</pre> <h2>输入项</h2> <pre>[1,-2,3,-2]</pre> <p>输出结果</p> <pre>3</pre> <div></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-104613.htm">模板引擎Thymeleaf基本介绍和使用</a></p>
+                                        <p>下一个：<a href="/news/article-105367.htm">Docker 安装 Confluence</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-80282.htm" title="动物医院诊疗许可证办理要多少钱一个（动物诊疗许可证哪里办）">动物医院诊疗许可证办理要多少钱一个（动物诊疗许可证哪里办）</a></li>
+                        <li class="py-2"><a href="/news/article-92526.htm" title="vue 封装图片路径">vue 封装图片路径</a></li>
+                        <li class="py-2"><a href="/news/article-105366.htm" title="C ++中的最大和圆子数组">C ++中的最大和圆子数组</a></li>
+                        <li class="py-2"><a href="/news/article-102952.htm" title="宠物领养规定标准（宠物领养百度百科）">宠物领养规定标准（宠物领养百度百科）</a></li>
+                        <li class="py-2"><a href="/news/article-74180.htm" title="宠物驱虫剂什么牌子好（宠物驱虫十大品牌）">宠物驱虫剂什么牌子好（宠物驱虫十大品牌）</a></li>
+                        <li class="py-2"><a href="/news/article-93905.htm" title="Code For Better 谷歌开发者之声—— 在 Windows 10 上对 Google Chrome 进行故障排除">Code For Better 谷歌开发者之声—— 在 Windows 10 上对 Google Chrome 进行故障排除</a></li>
+                        <li class="py-2"><a href="/news/article-91015.htm" title="多线程详解 创建多线程">多线程详解 创建多线程</a></li>
+                        <li class="py-2"><a href="/news/article-85244.htm" title="动物美容师哪里有培训的地方（宠物美容师哪里学）">动物美容师哪里有培训的地方（宠物美容师哪里学）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-17-shadowrocket-node.htm" title="4月17日19M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐">4月17日19M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-73499.htm" title="宠物医师资格证考试内容（宠物医生考试）">宠物医师资格证考试内容（宠物医生考试）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
