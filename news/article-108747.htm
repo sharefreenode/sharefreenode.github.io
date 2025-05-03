@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <meta charset="utf-8">
+    <link rel="canonical" href="https://sharefreenode.github.io/news/article-108747.htm" />
+    <title>escape 、encodeURI 、encodeURIComponent的区别与应用场景</title>
+        <meta name="description" content="背景 最近，在公司封装短信SDK时，遇到对请求参数进行 encodeURIComponent的场景。结合在做微信分享时，微信分享接口也要求传到服务器端的请求参数，必须进行 encodeURICompo" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/website/img/sharefreenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ShareFreeNode节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sharefreenode.github.io/news/article-108747.htm" />
+    <meta property="og:site_name" content="ShareFreeNode节点订阅站" />
+    <meta property="og:title" content="escape 、encodeURI 、encodeURIComponent的区别与应用场景" />
+    <meta property="og:image" content="https://sharefreenode.github.io/uploads/20240415/9b3586eae1d74835964d5f3f4d789636.webp" />
+        <meta property="og:release_date" content="2025-05-01T09:02:57" />
+    <meta property="og:updated_time" content="2025-05-01T09:02:57" />
+        <meta property="og:description" content="背景 最近，在公司封装短信SDK时，遇到对请求参数进行 encodeURIComponent的场景。结合在做微信分享时，微信分享接口也要求传到服务器端的请求参数，必须进行 encodeURICompo" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="escape 、encodeURI 、encodeURIComponent的区别与应用场景">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <link href="/assets/website/img/sharefreenode/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="/assets/website/js/frontend/sharefreenode/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/sharefreenode/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="/assets/website/css/sharefreenode/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-300HPJ3F69"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-300HPJ3F69');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="body" data-page="detail">
+    <!--==========================
+    Header
+  ============================-->
+<header id="header">
+    <div class="container">
+        <div id="logo" class="pull-left">
+            <a href="/">
+                        Share<span>FreeNode</span>            </a>
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/free-nodes/">免费节点</a></li>
+                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                <li><a href="/client.htm">客户端</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+    <!--==========================
+    Page Banner Section
+  ============================-->
+    <section id="innerBanner">
+        <div class="inner-content">
+            <h2><span>escape 、encodeURI 、encodeURIComponent的区别与应用场景</span></h2>
+            <p><a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span></p>
+        </div>
+    </section><!-- #Page Banner -->
+    <main id="main">
+        <!--==========================
+      Clients Section
+    ============================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="clients" class="wow fadeInUp">
+                        <div class="container">
+                            <div class="section-header">
+                                                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>背景<br /> 最近，在公司封装短信SDK时，遇到对请求参数进行 encodeURIComponent的场景。结合在做微信分享时，微信分享接口也要求传到服务器端的请求参数，必须进行 encodeURIComponent编码。于是，十分困惑，为什么需要对链接或请求参数进行 encodeURIComponent编码？何时需要进行编码？encodeURIComponent与encodeURI、escape又有什么区别呢？</p> <p>三种编码方式与应用场景<br /> 1）escape()<br /> 已废弃<br /> 该特性已经从 Web 标准中删除，虽然一些浏览器目前仍然支持它，但也许会在未来的某个时间停止支持，请尽量不要使用该特性。</p> <p>作用：escape() 函数可对字符串进行编码，这样就可以在所有的计算机上读取该字符串。</p> <p>说明：该方法不会对 ASCII 字母和数字进行编码，也不会对下面这些 ASCII 标点符号进行编码： * @ - _ + . / 。其他所有的字符都会被转义序列替换。</p> <p>与此方法相对的方法 —— unescape()，作用是对escape()编码的字符串进行解码。</p> <p>由于，此方法已被废弃。请勿在生产环境使用此方法。</p> <p>2）encodeURI()<br /> 作用：对字符串作为URI进行编码。（对整个URL进行编码，因此，不会对网址中特殊含义符号"; / ? : @ &amp; = + $ , #"，不会进行编码）</p> <p>说明：该方法不会对 ASCII 字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ' ( ) 。<br /> 该方法的目的是对 URI 进行完整的编码，因此对以下在 URI 中具有特殊含义的 ASCII 标点符号，encodeURI() 函数是不会进行转义的：;/?:@&amp;=+$,#</p> <p>应用场景：当期望获取一个可用的URL地址时，使用此方法进行编码。</p> <p>例如，</p> <p>encodeURI("http://www.example.org/a file with spaces.html")</p> <p># 编码结果<br /> http://www.example.org/a%20file%20with%20spaces.html</p> <p># 若使用 encodeURIComponent进行编码，则无法得到一个可正常工作的链接。<br /> # 可用将编码后的地址，粘贴到浏览器进行验证。<br /> encodeURIComponent("http://www.examp。e.org/a file with spaces.html")</p> <p># 编码结果<br /> http%3A%2F%2Fwww.example.org%2Fa%20file%20with%20spaces.html<br /> 3）encodeURIComponent()<br /> 作用：encodeURIComponent()是对统一资源标识符（URI）的组成部分进行编码的方法，而不用对整个URL进行编码。<br /> 在 encodeURI() 中不被编码的符号"; / ? : @ &amp; = + $ , #"，encodeURIComponent()都会进行编码。（可以观察到，都是一些常见的网络协议标志符——例如，“/@?&amp;#'”）</p> <p>应用场景：当需要对URL的参数进行编码时，使用encodeURIComponent()。</p> <p>例如，</p> <p># 对部分参数进行编码<br /> var p1 = encodeURIComponent("http://example.org/?a=12&amp;b=55")<br /> # 拼接参数<br /> var url = "http://example.net/?param1=" + p1 + "&amp;param2=99";</p> <p># 最终url的地址<br /> http://example.net/?param1=http%3A%2F%2Fexample.org%2F%Ffa%3D12%26b%3D55&amp;param2=99<br /> encodeURI与encodeURIComponent 不同点<br /> 不同点主要有两方面：</p> <p>对字符的编码方式不同。可参考下图。<br /> 应用场景不同<br /> 下图中，展示了encodeURI 与 encodeURIComponent 不同编码的字符。</p> <p> encodeURI与encodeURIComponent不同编码的字符<br /> 总结<br /> 对于开头提到的问题进行解答：</p> <p>为什么需要对URL进行编码？<br /> 统一各端（操作系统、浏览器等）对URL编码方式。由于RFC 1738，没有对「URL编码」制定具体的编码规则。不同的操作系统、不同的浏览器、不同的网页字符集，可能对同一地址产生不同的编码。为了保证客户端发送给服务端的请求，编码格式相同。因此，在客户端使用JavaScript的编码方式统一对URL进行编码。这样，服务端接受的请求的编码方式就是相同的。想要了解更多的同学，可以阅读阮一峰老师的《关于URL编码》这篇文章。</p> <p>何时使用encodeURIComponent进行编码<br /> 当需要对URL组成部分进行编码时，使用 encodeURIComponent。例如，微信JS-SDK分享朋友圈接口，需要将分享的链接作为参数回传给微信的服务器。此时，分享链接作为参数，因此需要进行编码处理。</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-107856.htm">开宠物医院需要什么条件?（现在开宠物店前景好吗）</a></p>
+                                        <p>下一个：<a href="/news/article-108750.htm">动物疫苗接种方法及注意事项有哪些呢英语（动物疫苗接种方法及注意事项有哪些呢英语翻译）</a></p>
+                                    </div>
+                                            </div>
+                        </div>
+                    </section><!-- #clients -->
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default" style="margin-top: 2rem;">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-104613.htm" title="模板引擎Thymeleaf基本介绍和使用">模板引擎Thymeleaf基本介绍和使用</a></li>
+                        <li class="py-2"><a href="/news/article-99204.htm" title="猫喜欢你的表现是什么（猫咪对主人的喜欢程度及表现）">猫喜欢你的表现是什么（猫咪对主人的喜欢程度及表现）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-15-free-v2ray-subscribe.htm" title="4月15日19.2M/S|Clash/Shadowrocket/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐">4月15日19.2M/S|Clash/Shadowrocket/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-108747.htm" title="escape 、encodeURI 、encodeURIComponent的区别与应用场景">escape 、encodeURI 、encodeURIComponent的区别与应用场景</a></li>
+                        <li class="py-2"><a href="/news/article-87395.htm" title="宠物粮什么牌子好（宠物粮食品牌排行榜）">宠物粮什么牌子好（宠物粮食品牌排行榜）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-10-clash-node.htm" title="4月10日20.2M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">4月10日20.2M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-17-shadowrocket-node.htm" title="4月17日19M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐">4月17日19M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-102952.htm" title="宠物领养规定标准（宠物领养百度百科）">宠物领养规定标准（宠物领养百度百科）</a></li>
+                        <li class="py-2"><a href="/news/article-109574.htm" title="宠物零食加工厂要投资多少钱呢（宠物零食加工厂要投资多少钱呢视频）">宠物零食加工厂要投资多少钱呢（宠物零食加工厂要投资多少钱呢视频）</a></li>
+                        <li class="py-2"><a href="/news/article-96987.htm" title="南京领养狗狗多少钱（南京市宠物领养）">南京领养狗狗多少钱（南京市宠物领养）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+        <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    ShareFreeNode节点订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- #footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript  -->
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/easing/easing.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/hoverIntent.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/superfish/superfish.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/wow/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/lib/sticky/sticky.js"></script>
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="/assets/website/js/frontend/sharefreenode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
