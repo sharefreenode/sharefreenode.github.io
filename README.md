@@ -1,4 +1,4 @@
-# 9月21日18.9M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐  更新时间 2025-09-21 21:32:16
+# 9月25日18M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新订阅链接，代理机场推荐  更新时间 2025-09-25 10:24:54
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://sharefreenode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://sharefreenode.github.io/uploads/2025/09/0-20250921.yaml
-- https://sharefreenode.github.io/uploads/2025/09/1-20250921.yaml
-- https://sharefreenode.github.io/uploads/2025/09/2-20250921.yaml
-- https://sharefreenode.github.io/uploads/2025/09/3-20250921.yaml
-- https://sharefreenode.github.io/uploads/2025/09/4-20250921.yaml
+- https://sharefreenode.github.io/uploads/2025/09/0-20250925.yaml
+- https://sharefreenode.github.io/uploads/2025/09/1-20250925.yaml
+- https://sharefreenode.github.io/uploads/2025/09/2-20250925.yaml
+- https://sharefreenode.github.io/uploads/2025/09/3-20250925.yaml
+- https://sharefreenode.github.io/uploads/2025/09/4-20250925.yaml
 
 ### V2ray订阅链接
 
-- https://sharefreenode.github.io/uploads/2025/09/0-20250921.txt
-- https://sharefreenode.github.io/uploads/2025/09/1-20250921.txt
-- https://sharefreenode.github.io/uploads/2025/09/2-20250921.txt
-- https://sharefreenode.github.io/uploads/2025/09/3-20250921.txt
-- https://sharefreenode.github.io/uploads/2025/09/4-20250921.txt
+- https://sharefreenode.github.io/uploads/2025/09/0-20250925.txt
+- https://sharefreenode.github.io/uploads/2025/09/1-20250925.txt
+- https://sharefreenode.github.io/uploads/2025/09/2-20250925.txt
+- https://sharefreenode.github.io/uploads/2025/09/3-20250925.txt
+- https://sharefreenode.github.io/uploads/2025/09/4-20250925.txt
 
 ### Sing-box订阅链接
 
-- https://sharefreenode.github.io/uploads/2025/09/20250921.json
+- https://sharefreenode.github.io/uploads/2025/09/20250925.json
 
 ## 更多clash节点订阅 ：
 

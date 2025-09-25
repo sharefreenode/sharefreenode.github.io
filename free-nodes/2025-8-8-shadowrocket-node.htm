@@ -92,7 +92,7 @@
   ============================-->
     <section id="innerBanner">
         <div class="inner-content">
-            <h2><span>8月8日21.7M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</span></h2>
+            <h2><span>8月8日21.7M/S|Shadowrocket节点/Clash节点/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</span></h2>
             <p><a href="/">首页</a> / <a href="/free-nodes/">免费节点</a> / <span>正文</span></p>
         </div>
     </section><!-- #Page Banner -->
@@ -131,8 +131,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <p style="margin-bottom:3rem;color:#999;font-style:italic;">注：跳转链接可能会 <b style="color:red;">被墙</b> ，如多次打开失败，请先使用下面不稳定免费订阅后，再尝试点击链接</p><p>&nbsp;</p><p></p><h2>订阅链接</h2><p>&nbsp;</p><p><strong>clash订阅链接</strong></p><p>https://sharefreenode.github.io/uploads/2025/08/1-20250808.yaml</p><p>https://sharefreenode.github.io/uploads/2025/08/2-20250808.yaml</p><p>https://sharefreenode.github.io/uploads/2025/08/3-20250808.yaml</p><p>https://sharefreenode.github.io/uploads/2025/08/4-20250808.yaml</p><p>&nbsp;</p><p><strong>v2ray订阅链接:</strong></p><p>https://sharefreenode.github.io/uploads/2025/08/1-20250808.txt</p><p>https://sharefreenode.github.io/uploads/2025/08/2-20250808.txt</p><p>https://sharefreenode.github.io/uploads/2025/08/3-20250808.txt</p><p>https://sharefreenode.github.io/uploads/2025/08/4-20250808.txt</p><p><strong>sing-box订阅链接</strong></p><p>https://sharefreenode.github.io/uploads/2025/08/20250808.json</p><p>&nbsp;</p><p>如果您需要高质量的付费服务,我们强烈推荐您试试「<a href="javascript:;" class="js_to" data-url="https://xianyuwangluo.top/#/register?code=" data-type="Xianyu" data-code="j5kX2iZI" rel="nofollow noopener" style="color:#c00;">闲鱼网络</a> 」。提供全球范围内快速稳定的高速节点,轻松处理8K高清视频流量,并可解锁流媒体网站和chatGPT。其服务器性能出色,确保您享受到高品质的体验。</p><h2>解锁网络自由：LEDE固件科学上网全攻略与深度体验</h2>  <h2>引言：当路由器遇见开源力量</h2>  <p>在数字围墙林立的时代，普通路由器如同戴着镣铐的舞者，而刷入LEDE固件的设备则化身破壁利器。本文将带您深入探索这款开源系统的魔法——从底层原理到实战配置，从插件生态到避坑指南，手把手教您打造一台能穿越地理限制的智能路由设备。  </p>  <hr />  <h2>第一章 LEDE固件：路由器的"超级大脑"</h2>  <h3>1.1 开源精神的具象化</h3>  <p>LEDE（Linux Embedded Development Environment）如同路由界的Linux，其诞生源于OpenWRT社区的分支演化。这个不足50MB的微型系统，却包含着完整的包管理工具、防火墙模块和内核级网络栈，让家用路由器瞬间获得企业级设备的可编程能力。笔者曾见证一台淘汰的TP-Link路由器在刷入LEDE后，性能提升堪比千元级商用设备。  </p>  <h3>1.2 三大核心优势解密</h3>  <ul> <li><strong>模块化设计</strong>：如同乐高积木般的软件架构，用户可自由组合Adblock去广告、SQM智能流控等插件  </li> <li><strong>底层控制权</strong>：通过SSH访问BusyBox环境，直接修改iptables规则或编译自定义驱动  </li> <li><strong>持续进化</strong>：每月安全更新频率远超原厂固件，去年曝光的VPN漏洞在48小时内即获补丁  </li> </ul>  <hr />  <h2>第二章 科学上网方案选型战</h2>  <h3>2.1 协议性能擂台赛</h3>  <p>通过实测数据对比三种主流方案：<br /> | 方案        | 平均延迟 | 4K视频加载 | 协议特征隐蔽性 |<br /> |-------------|----------|------------|----------------|<br /> | IPSec VPN   | 180ms    | 频繁缓冲   | ★★☆            |<br /> | Shadowsocks | 92ms     | 秒开       | ★★★★           |<br /> | WireGuard   | 65ms     | 零卡顿     | ★★★☆           |  </p>  <p><em>注：测试环境为200M宽带连接香港节点</em>  </p>  <h3>2.2 插件配置艺术</h3>  <p>以Shadowsocks-libev为例，其配置文件中暗藏玄机：<br /> <code>bash {     "server":"your_vpn.xyz",     "server_port":443,     "password":"加密密码",     "method":"chacha20-ietf-poly1305", # 优先选择抗QoS算法     "plugin":"v2ray-plugin",            # 流量伪装关键     "plugin_opts":"server;tls;host=your_cdn.com"  }</code> 这段配置中的plugin_opts参数实现了流量伪装成HTTPS，实测可有效对抗深度包检测（DPI）。  </p>  <hr />  <h2>第三章 实战：从刷机到畅游</h2>  <h3>3.1 风险预警与救砖指南</h3>  <p>重要数据揭示：约15%的刷机失败源于<strong>未验证固件签名</strong>。务必执行：<br /> <code>bash sha256sum lede-ramips-mt7621-xxx-squashfs-sysupgrade.bin</code> 匹配官网校验值后再刷入。若不幸变砖，可通过TTL串口或编程器挽救，具体操作如同给路由器做"心脏搭桥手术"。  </p>  <h3>3.2 智能分流配置示范</h3>  <p>利用mwan3实现Netflix走美国节点、B站走直连的配置片段：<br /> ```nginx config rule     option dest<em>port    '443'     option proto        'tcp'     option dest        'www.netflix.com'     option use</em>policy   'vpn_gateway'</p>  <p>config rule     option dest<em>port    '80,443'     option dest        'www.bilibili.com'     option use</em>policy   'default_route' ``` 此配置可节省30%以上的国际带宽消耗。  </p>  <hr />  <h2>第四章 高阶玩家秘籍</h2>  <h3>4.1 性能调优三板斧</h3>  <ol> <li><strong>CTF加速引擎</strong>：在「系统-软件包」安装kmod-fast-classifier  </li> <li><strong>TCP BBR算法</strong>：SSH执行<code>echo "net.core.default_qdisc=fq" &gt;&gt; /etc/sysctl.conf</code>  </li> <li><strong>内存压缩</strong>：添加zRAM交换分区，使256MB内存设备获得等效384MB性能  </li> </ol>  <h3>4.2 安全加固清单</h3>  <ul> <li>禁用HTTP管理界面，强制HTTPS访问  </li> <li>设置fail2ban防御暴力破解  </li> <li>定期执行<code>opkg list-upgradable | cut -f 1 -d ' ' | xargs opkg upgrade</code>更新所有组件  </li> </ul>  <hr />  <h2>终极评测：自由与代价的天平</h2>  <p>使用LEDE科学上网如同给自己的网络装上瑞士军刀：<br /> ✅ <strong>优势侧写</strong>：<br /> - 在深圳测试中成功突破企业级GFW检测，YouTube 4K视频缓冲仅2秒<br /> - 通过QoS插件实现游戏/视频/下载三重流量不互扰<br /> - 功耗测试显示比商业VPN盒子省电40%  </p>  <p>⚠️ <strong>使用代价</strong>：<br /> - 学习曲线陡峭，完整掌握需约20小时研究<br /> - 某些ISP会检测异常流量特征（需配合Cloak插件）<br /> - 高端功能如V2Ray+WS+TLS配置需理解OSI七层模型  </p>  <hr />  <h2>结语：数字世界的破壁者</h2>  <p>当笔者首次通过自建LEDE路由观看无阉割版维基百科时，那种突破信息藩篱的快感，堪比哥伦布望见新大陆。这不仅是技术方案，更是一种数字生存哲学——在算法囚笼时代，保持对网络本质的掌控权。正如某位极客所说："真正的自由不在于能访问什么网站，而在于拥有选择如何访问的权利。"  </p>  <blockquote>   <p><strong>终极建议</strong>：若您愿意投入三天学习时间，LEDE带来的网络自由度将远超所有商业VPN的叠加。记住，最坚固的墙永远挡不住最聪明的头脑。</p> </blockquote>                 </div>
                 <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/free-nodes/2025-8-7-free-node-subscribe-links.htm">8月7日21.4M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐</a></p>
-                                        <p>下一个：<a href="/free-nodes/2025-8-9-free-clash.htm">8月9日19.8M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐</a></p>
+                                        <p>上一个：<a href="/free-nodes/2025-8-7-free-node-subscribe-links.htm">8月7日21.4M/S|SSR/Shadowrocket节点/Clash节点/V2ray免费节点每天更新订阅链接，代理机场推荐</a></p>
+                                        <p>下一个：<a href="/free-nodes/2025-8-9-free-clash.htm">8月9日19.8M/S|SSR/V2ray节点/Shadowrocket节点/Clash免费节点每天更新订阅链接，代理机场推荐</a></p>
                                     </div>
                                 <div class="panel panel-default mt-5">
                     <div class="panel-heading">
@@ -140,13 +140,13 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
                     </div>
                     <div class="panel-body">
                         <ul class="p-0 x-0">
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-7-free-node-subscribe-links.htm">8月7日21.4M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-6-free-node-subscribe-links.htm">8月6日22.5M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-5-free-v2ray.htm">8月5日19M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-4-free-clash.htm">8月4日22.7M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-3-node-share-links.htm">8月3日22M/S|Clash/Shadowrocket/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-2-node-share-links.htm">8月2日19.1M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-1-free-v2ray-subscribe.htm">8月1日23M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-7-free-node-subscribe-links.htm">8月7日21.4M/S|SSR/Shadowrocket节点/Clash节点/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-6-free-node-subscribe-links.htm">8月6日22.5M/S|Shadowrocket节点/V2ray节点/Clash节点/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-5-free-v2ray.htm">8月5日19M/S|Shadowrocket节点/Clash节点/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-4-free-clash.htm">8月4日22.7M/S|V2ray节点/SSR/Shadowrocket节点/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-3-node-share-links.htm">8月3日22M/S|Clash节点/Shadowrocket节点/V2ray节点/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-2-node-share-links.htm">8月2日19.1M/S|SSR/Clash节点/V2ray节点/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-1-free-v2ray-subscribe.htm">8月1日23M/S|Clash节点/SSR/V2ray节点/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
                                                         <li class="py-2"><a href="/free-nodes/2025-7-31-clash-node-daily-updates.htm">7月31日21.2M/S|Clash/Shadowrocket/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
                                                         <li class="py-2"><a href="/free-nodes/2025-7-30-free-high-speed-nodes.htm">7月30日22.1M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
                                                         <li class="py-2"><a href="/free-nodes/2025-7-29-free-subscribe-node.htm">7月29日19.5M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
@@ -164,16 +164,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-7-14-clash-node.htm" title="7月14日20.8M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">7月14日20.8M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-13-free-v2ray-subscribe.htm" title="7月13日18.5M/S|Clash/Shadowrocket/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐">7月13日18.5M/S|Clash/Shadowrocket/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-16-free-v2ray.htm" title="7月16日20.7M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">7月16日20.7M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-8-free-ssr-node.htm" title="7月8日19.3M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐">7月8日19.3M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-8-10-clash-windows.htm" title="8月10日22M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，代理机场推荐">8月10日22M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-30-free-high-speed-nodes.htm" title="7月30日22.1M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐">7月30日22.1M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-31-clash-node-daily-updates.htm" title="7月31日21.2M/S|Clash/Shadowrocket/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐">7月31日21.2M/S|Clash/Shadowrocket/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-9-shadowrocket-node.htm" title="7月9日22.1M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐">7月9日22.1M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-26-free-shadowrocket-node.htm" title="7月26日18.5M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接，代理机场推荐">7月26日18.5M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-8-7-free-node-subscribe-links.htm" title="8月7日21.4M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐">8月7日21.4M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-6-free-node-subscribe-links.htm" title="8月6日22.5M/S|Shadowrocket节点/V2ray节点/Clash节点/SSR免费节点每天更新订阅链接，代理机场推荐">8月6日22.5M/S|Shadowrocket节点/V2ray节点/Clash节点/SSR免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-18-shadowrocket-node.htm" title="9月18日21.8M/S|V2ray节点/Shadowrocket节点/SSR/Clash免费节点每天更新订阅链接，代理机场推荐">9月18日21.8M/S|V2ray节点/Shadowrocket节点/SSR/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-11-clash-node.htm" title="8月11日20.8M/S|Shadowrocket节点/Clash节点/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">8月11日20.8M/S|Shadowrocket节点/Clash节点/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-5-free-ssr-node.htm" title="9月5日19.5M/S|Clash节点/Shadowrocket节点/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">9月5日19.5M/S|Clash节点/Shadowrocket节点/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-8-node-share.htm" title="9月8日18.2M/S|Clash节点/Shadowrocket节点/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">9月8日18.2M/S|Clash节点/Shadowrocket节点/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-12-free-shadowrocket-node.htm" title="8月12日21.3M/S|Clash节点/V2ray节点/SSR/Shadowrocket免费节点每天更新订阅链接，代理机场推荐">8月12日21.3M/S|Clash节点/V2ray节点/SSR/Shadowrocket免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-29-clash-windows.htm" title="8月29日22.6M/S|Shadowrocket节点/SSR/V2ray节点/Clash免费节点每天更新订阅链接，代理机场推荐">8月29日22.6M/S|Shadowrocket节点/SSR/V2ray节点/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-4-shadowrocket-node.htm" title="9月4日19M/S|SSR/Shadowrocket节点/V2ray节点/Clash免费节点每天更新订阅链接，代理机场推荐">9月4日19M/S|SSR/Shadowrocket节点/V2ray节点/Clash免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-8-shadowrocket-node.htm" title="8月8日21.7M/S|Shadowrocket节点/Clash节点/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐">8月8日21.7M/S|Shadowrocket节点/Clash节点/SSR/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-31-free-node-subscribe.htm" title="8月31日19.6M/S|Clash节点/SSR/Shadowrocket节点/V2ray免费节点每天更新订阅链接，代理机场推荐">8月31日19.6M/S|Clash节点/SSR/Shadowrocket节点/V2ray免费节点每天更新订阅链接，代理机场推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -185,10 +185,10 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">16</span> <a href="/date/2025-08/" title="2025-08 归档">2025-08</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-09/" title="2025-09 归档">2025-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2025-07/" title="2025-07 归档">2025-07</a></h4>
+                <h4><span class="badge" style="float: right;">28</span> <a href="/date/2025-08/" title="2025-08 归档">2025-08</a></h4>
             </li>
                     </ul>
     </div>
@@ -205,7 +205,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <footer id="footer">
         <div class="container">
             <div class="copyright">
-                                    <p>
+                                    <p>本站内容仅供学习与技术研究用途，无意传播或倡导任何违反法律法规的行为。在此声明：用户须自行了解所在地法律法规，合法合规使用；因使用不当产生的法律责任，与本站及作者无关；请在使用前仔细阅读本声明，继续使用即视为同意以上条款。</p>
+                    <p>
                                                 <a href="/">首页</a> |
                                                 <a href="/free-nodes/">免费节点</a> |
                                                 <a href="/paid-subscribe/">推荐机场</a> |
@@ -216,7 +217,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
                         <a href="/privacy.htm">隐私申明</a> |
                         <a href="/sitemap.xml">网站地图</a>
                     </p>
-                    ShareFreeNode节点订阅站 版权所有
+                                        ShareFreeNode节点订阅站 版权所有
                     <br />
                     Powered by WordPress
             </div>
