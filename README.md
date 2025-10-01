@@ -1,4 +1,4 @@
-# 9月25日18M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新订阅链接，代理机场推荐  更新时间 2025-09-25 10:24:54
+# 10月1日22.9M/S|Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点免费节点每天更新订阅链接，代理机场推荐  更新时间 2025-10-01 09:13:37
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://sharefreenode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -7,27 +7,27 @@
 
 ## 订阅链接：
 
-### Clash订阅链接
+### 免费Clash节点订阅链接
 
-- https://sharefreenode.github.io/uploads/2025/09/0-20250925.yaml
-- https://sharefreenode.github.io/uploads/2025/09/1-20250925.yaml
-- https://sharefreenode.github.io/uploads/2025/09/2-20250925.yaml
-- https://sharefreenode.github.io/uploads/2025/09/3-20250925.yaml
-- https://sharefreenode.github.io/uploads/2025/09/4-20250925.yaml
+- https://sharefreenode.github.io/uploads/2025/10/0-20251001.yaml
+- https://sharefreenode.github.io/uploads/2025/10/1-20251001.yaml
+- https://sharefreenode.github.io/uploads/2025/10/2-20251001.yaml
+- https://sharefreenode.github.io/uploads/2025/10/3-20251001.yaml
+- https://sharefreenode.github.io/uploads/2025/10/4-20251001.yaml
 
-### V2ray订阅链接
+### 免费V2ray节点订阅链接
 
-- https://sharefreenode.github.io/uploads/2025/09/0-20250925.txt
-- https://sharefreenode.github.io/uploads/2025/09/1-20250925.txt
-- https://sharefreenode.github.io/uploads/2025/09/2-20250925.txt
-- https://sharefreenode.github.io/uploads/2025/09/3-20250925.txt
-- https://sharefreenode.github.io/uploads/2025/09/4-20250925.txt
+- https://sharefreenode.github.io/uploads/2025/10/0-20251001.txt
+- https://sharefreenode.github.io/uploads/2025/10/1-20251001.txt
+- https://sharefreenode.github.io/uploads/2025/10/2-20251001.txt
+- https://sharefreenode.github.io/uploads/2025/10/3-20251001.txt
+- https://sharefreenode.github.io/uploads/2025/10/4-20251001.txt
 
-### Sing-box订阅链接
+### 免费Sing-box节点订阅链接
 
-- https://sharefreenode.github.io/uploads/2025/09/20250925.json
+- https://sharefreenode.github.io/uploads/2025/10/20251001.json
 
-## 更多clash节点订阅 ：
+## 更多Clash节点订阅 ：
 
 
 ### 高速机场推荐1【<a href="https://www.nfsq.us/#/register?code=UTg5SIHV" target="_blank">农夫山泉</a>】
